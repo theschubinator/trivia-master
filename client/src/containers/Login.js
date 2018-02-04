@@ -5,20 +5,20 @@ import { login, loadUser } from '../actions/users';
 
 class Login extends Component {
 	handleChange = (e) => {
-		const { name, value } = e.target
-		const formData = Object.assign({}, this.props.formData, { [name]: value })
-		this.props.updateForm(formData)
+		const { name, value } = e.target;
+		const formData = Object.assign({}, this.props.formData, { [name]: value });
+		this.props.updateForm(formData);
 	}
 
 	handleSubmit = (e) => {
-		e.preventDefault()
+		e.preventDefault();
 		this.props.login(this.props.formData)
-		.then(user => this.props.loadUser(user))
-		this.props.resetFormData()
+		.then(user => this.props.loadUser(user));
+		this.props.resetFormData();
 	}
 
 	render () {
-		const { formData } = this.props;
+		const { formData, user } = this.props;
 
 		return (
 			<div>
@@ -29,6 +29,7 @@ class Login extends Component {
 					<input type="text" name="password" value={formData.password} onChange={this.handleChange} />
 					<input type="submit" />
 				</form>
+				<div>{user.error}</div>
 			</div>
 		)
 	}
@@ -36,8 +37,9 @@ class Login extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		formData: state.formData
+		formData: state.formData,
+		user: state.currentUser
 	}
 }
 
-export default connect(mapStateToProps, {updateForm, submitForm, resetFormData, login, loadUser })(Login)
+export default connect(mapStateToProps, {updateForm, submitForm, resetFormData, login, loadUser })(Login);

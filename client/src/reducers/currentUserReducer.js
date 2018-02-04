@@ -3,7 +3,7 @@ const defaultState = {
 	username: '',
 	email: '',
 	admin: ''
-}
+};
 
 export const currentUserReducer = (state=defaultState, action) => {
 	switch(action.type) {
@@ -13,5 +13,5 @@ export const currentUserReducer = (state=defaultState, action) => {
 			return defaultState
 		default:
 			return state
-	}
+	};
 }

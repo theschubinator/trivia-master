@@ -2,20 +2,20 @@ export const updateForm = (formData) => {
 	return {
 		type: 'UPDATE_FORM',
 		payload: formData
-	}
-}
-
-export const grabErrors = (user) => {
-	return {
-		type: 'SHOW_ERRORS',
-		payload: user
-	}
+	};
 }
 
 export const resetFormData = () => {
 	return {
 		type: 'RESET_FORM'
-	}
+	};
+}
+
+export const grabErrors = (errors) => {
+	return {
+		type: "SHOW_ERRORS",
+		payload: errors
+	};
 }
 
 export const submitForm = (formData) => {

@@ -2,14 +2,14 @@ export const loadUser = (user) => {
 	return {
 		type: 'LOAD_USER',
 		payload: user
-	}
+	};
 } 
 
 export const login = (data) => {
 	const user = {
 		username: data.username,
 		password: data.password
-	}
+	};
 
 	return dispatch => {
 		return fetch('api/sessions', {
@@ -26,5 +26,5 @@ export const login = (data) => {
 export const signOut = () => {
 	return {
 		type: 'SIGN_OUT'
-	}
+	};
 }

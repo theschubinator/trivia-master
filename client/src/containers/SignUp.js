@@ -6,52 +6,49 @@ import { loadUser } from '../actions/users';
 class SignUp extends Component {
 
 	handleChange = (e) => {
-		const { name, value } = e.target
-		const formData = Object.assign({}, this.props.formData, { [name]: value })
-		this.props.updateForm(formData)
+		const { name, value } = e.target;
+		const formData = Object.assign({}, this.props.formData, { [name]: value });
+		this.props.updateForm(formData);
 	}
 
 	passwordsExist = () => {
-		if (this.props.formData.password !== "" || this.props.formData.password_confirmation !== "") {
-			return true
-		}
-		this.props.grabErrors({errors:['Password fields cannot be blank']})
-		return false
+		if (this.props.formData.password !== "" || this.props.formData.password_confirmation !== "")
+			return true;
+		else 
+			this.props.grabErrors({errors:['Password fields cannot be blank']})
+			return false;
 	}
 
 	attemptToSubmitForm = () => {
-		this.props.submitForm(this.props.formData)
-			.then(user => {
-				if(!user.errors) {
-					this.props.loadUser(user)
-					this.props.resetFormData()
-					//Redirect to Profile Page Here!
-					this.props.history.push(`/users/${this.props.user.id}`)
-				} else {
-					this.props.grabErrors(user)
-				}
-			})	
+	this.props.submitForm(this.props.formData)
+		.then(user => {
+			this.props.loadUser(user);
+			if(!user.errors) {
+				this.props.resetFormData();
+				//Redirect to Profile Page!
+				this.props.history.push(`/users/${this.props.user.id}`);
+			} 
+		})	
 	}
 
 	handleSubmit = (e) => {
-		e.preventDefault()
-		 if (this.passwordsExist())
-		 	this.attemptToSubmitForm()	
+		e.preventDefault();
+		if (this.passwordsExist())
+	 		this.attemptToSubmitForm();	
 	}
 
-
+	showErrors = () => {
+		const user = this.props.user;
+		const formData = this.props.formData;
+		if (user.errors) 
+			return user.errors.map(error => <div>{error}</div>);
+		if (formData.errors)
+			return <div>{formData.errors[0]}</div>;
+	}
 
 	
 	render () {
-		const { formData } = this.props;
-
-		const showErrors = () => {
-			if (formData.errors) {
-				return formData.errors.map((error, i) =>
-					<div key={i}>{error}</div>
-				)
-			}
-		}
+		const { formData, user } = this.props;
 
 		return (
 			<div>
@@ -66,7 +63,7 @@ class SignUp extends Component {
 					<input type="text" name="password_confirmation" value={formData.password_confirmation} onChange={this.handleChange} />
 					<input type="submit" />
 				</form>
-				{ showErrors() }
+				<div>{this.showErrors()}</div>
 			</div>
 		)
 	}
@@ -79,4 +76,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {updateForm, submitForm, loadUser, grabErrors, resetFormData })(SignUp)
+export default connect(mapStateToProps, {updateForm, submitForm, loadUser, grabErrors, resetFormData })(SignUp);

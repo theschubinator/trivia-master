@@ -8,4 +8,4 @@ class PlayGame extends Component {
 	}
 }
 
-export default PlayGame
+export default PlayGame;

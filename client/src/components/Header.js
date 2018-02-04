@@ -5,7 +5,7 @@ import { signOut } from '../actions/users';
 
 const Header = (props) => {
 	const handleSignOut = () => {
-		props.signOut()
+		props.signOut();
 	}
 
 	const loggedInUser = (user) => {
@@ -49,4 +49,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, { signOut })(Header)
+export default connect(mapStateToProps, { signOut })(Header);
