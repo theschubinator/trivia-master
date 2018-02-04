@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateForm, submitForm } from '../actions/userForm';
+import { updateForm, submitForm, resetFormData } from '../actions/userForm';
 import { login, loadUser } from '../actions/users';
 
 class Login extends Component {
@@ -14,6 +14,7 @@ class Login extends Component {
 		e.preventDefault()
 		this.props.login(this.props.formData)
 		.then(user => this.props.loadUser(user))
+		this.props.resetFormData()
 	}
 
 	render () {
@@ -39,4 +40,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {updateForm, submitForm, login, loadUser })(Login)
+export default connect(mapStateToProps, {updateForm, submitForm, resetFormData, login, loadUser })(Login)
