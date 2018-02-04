@@ -5,6 +5,19 @@ export const updateForm = (formData) => {
 	}
 }
 
+export const grabErrors = (user) => {
+	return {
+		type: 'SHOW_ERRORS',
+		payload: user
+	}
+}
+
+export const resetFormData = () => {
+	return {
+		type: 'RESET_FORM'
+	}
+}
+
 export const submitForm = (formData) => {
 	return dispatch => {
 		return fetch('/api/users', {
@@ -13,6 +26,8 @@ export const submitForm = (formData) => {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({ user: formData })
-		}).then(response => {debugger})
+		})
+			.catch(error => console.log(error))
+			.then(response => response.json())
 	}
 }
