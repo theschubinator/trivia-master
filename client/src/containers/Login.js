@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateForm, submitForm } from '../actions/userForm';
+import { login, loadUser } from '../actions/users';
 
 class Login extends Component {
 	handleChange = (e) => {
@@ -9,18 +10,22 @@ class Login extends Component {
 		this.props.updateForm(formData)
 	}
 
-	handleSubmit = () => {
-		this.props.submitForm(this.props.formData)
+	handleSubmit = (e) => {
+		e.preventDefault()
+		this.props.login(this.props.formData)
+		.then(user => this.props.loadUser(user))
 	}
 
 	render () {
+		const { formData } = this.props;
+
 		return (
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<label>Username</label>
-					<input type="text" name="username" onChange={this.handleChange} />
+					<input type="text" name="username" value={formData.username} onChange={this.handleChange} />
 					<label>Password</label>
-					<input type="text" name="password" onChange={this.handleChange} />
+					<input type="text" name="password" value={formData.password} onChange={this.handleChange} />
 					<input type="submit" />
 				</form>
 			</div>
@@ -34,4 +39,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {updateForm, submitForm})(Login)
+export default connect(mapStateToProps, {updateForm, submitForm, login, loadUser })(Login)

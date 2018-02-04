@@ -1,13 +1,24 @@
-export const loadUser = (userData) => {
-	
-	const user = {
-		id: userData.id,
-		username: userData.username,
-		email: userData.email,
-		admin: userData.email
-	}
+export const loadUser = (user) => {
 	return {
 		type: 'LOAD_USER',
-		payload: userData.error || user
+		payload: user
 	}
 } 
+
+export const login = (data) => {
+	const user = {
+		username: data.username,
+		password: data.password
+	}
+
+	return dispatch => {
+		return fetch('api/sessions', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(user: user)
+		})
+		.then(response => response.json())
+	}
+}
