@@ -4,3 +4,10 @@ export const setGameCategory = (category) => {
 		payload: category
 	}
 }
+
+export const updateGameResults = (result) => {
+	return {
+		type: 'UPDATE_RESULTS',
+		payload: result
+	}
+}

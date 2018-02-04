@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import GameOptions from './GameOptions';
 import { questionsByCategory, randomQuestion } from '../helpers/questions';
-import { GameCard } from '../components/GameCard';
+import GameCard from '../components/GameCard';
 
 class PlayGame extends Component {
 
