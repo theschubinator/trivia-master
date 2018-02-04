@@ -5,7 +5,7 @@ user = User.find_by(username: 'theschubinator')
 sports = Category.create(name: 'Sports')
 history = Category.create(name: 'History')
 science = Category.create(name: 'Science')
-entertainment = Category.create(name: 'entertainment')
+entertainment = Category.create(name: 'Entertainment')
 
 # Sports Questions
 Question.create(

@@ -1,5 +1,4 @@
 import React from 'react';
-import { CurrentGame } from './CurrentGame';
 import { setGameCategory } from '../actions/game';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';

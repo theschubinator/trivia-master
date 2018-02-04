@@ -4,14 +4,16 @@ import { Redirect } from 'react-router-dom';
 import GameOptions from './GameOptions';
 import { questionsByCategory, randomQuestion } from '../helpers/questions';
 import GameCard from '../components/GameCard';
+import GameSubmission from '../components/GameSubmission';
 
 class PlayGame extends Component {
 
 	render () {
-		const { user, game, questions } = this.props
+		const { user, game, questions, history } = this.props
 		if(!user.loggedIn) return <Redirect to="/" />
-		
+
 		const playGame = () => {
+			if (game.results.length >= 10) return <GameSubmission history={history} />
 			const gameQuestions = questionsByCategory(questions, game.category);
 			const question = randomQuestion(gameQuestions);
 			return <GameCard question={question} />

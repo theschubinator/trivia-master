@@ -11,3 +11,10 @@ export const updateGameResults = (question, result) => {
 		payload: {question, result}
 	}
 }
+
+export const submitGame = (game) => {
+	return {
+		type: 'SUBMIT_GAME',
+		payload: game
+	}
+}
