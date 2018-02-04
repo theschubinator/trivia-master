@@ -1,3 +1,4 @@
+// ** ACTION creators
 export const updateForm = (formData) => {
 	return {
 		type: 'UPDATE_FORM',
@@ -18,6 +19,7 @@ export const grabErrors = (errors) => {
 	};
 }
 
+// ** ASYNC Actions
 export const submitForm = (formData) => {
 	return dispatch => {
 		return fetch('/api/users', {

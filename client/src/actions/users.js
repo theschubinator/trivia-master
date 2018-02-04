@@ -1,10 +1,18 @@
+//** ACTION Creators
 export const loadUser = (user) => {
 	return {
 		type: 'LOAD_USER',
 		payload: user
 	};
+}
+
+export const signOut = () => {
+	return {
+		type: 'SIGN_OUT'
+	};
 } 
 
+//** ASYNC Actions
 export const login = (data) => {
 	const user = {
 		username: data.username,
@@ -21,10 +29,4 @@ export const login = (data) => {
 		})
 		.then(response => response.json())
 	}
-}
-
-export const signOut = () => {
-	return {
-		type: 'SIGN_OUT'
-	};
 }

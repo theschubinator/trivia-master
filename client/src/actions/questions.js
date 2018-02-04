@@ -1,3 +1,4 @@
+// ** ACTION creators
 const setQuestions = (questions) => {
 	return {
 		type: 'LOAD_QUESTIONS',
@@ -5,6 +6,7 @@ const setQuestions = (questions) => {
 	}
 }
 
+// ** ASYNC actions
 export const loadQuestions = () => {
 	return dispatch => {
 	 return fetch('api/questions')
