@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { signOut } from '../actions/users';
 
-const Header = ({user}) => {
+const Header = (props) => {
+	const handleSignOut = () => {
+		props.signOut()
+	}
+
 	const loggedInUser = (user) => {
 		if(user.id !== "") {
 			return (
@@ -11,7 +16,7 @@ const Header = ({user}) => {
 					<Link to={`users/${user.id}`}>Profile</Link>
 					<Link to="/playgame">Play Game</Link>
 					<Link to="/questions">View Questions</Link>
-					<Link to="#">Log Out</Link>
+					<Link to="#" onClick={ handleSignOut }>Log Out</Link>
 				</div>
 			)
 		}
@@ -31,8 +36,8 @@ const Header = ({user}) => {
 
 	return (
 		<div>
-			{ loggedOutUser(user) }
-			{ loggedInUser(user) }
+			{ loggedOutUser(props.user) }
+			{ loggedInUser(props.user) }
 		</div>
 	)
 }
@@ -44,4 +49,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps, { signOut })(Header)

@@ -11,7 +11,4 @@ class Api::SessionsController < ApplicationController
 			end
 		end
 	end
-
-	def destroy
-	end
 end

@@ -22,3 +22,9 @@ export const login = (data) => {
 		.then(response => response.json())
 	}
 }
+
+export const signOut = () => {
+	return {
+		type: 'SIGN_OUT'
+	}
+}
