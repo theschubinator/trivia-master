@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Header = ({user}) => {
 	const loggedInUser = (user) => {
-		if(user.id != "") {
+		if(user.id !== "") {
 			return (
 				<div>
 					<Link to="/">Home</Link>

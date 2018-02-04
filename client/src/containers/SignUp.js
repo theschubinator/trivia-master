@@ -12,7 +12,7 @@ class SignUp extends Component {
 	}
 
 	passwordsExist = () => {
-		if (this.props.formData.password != "" || this.props.formData.password_confirmation != "") {
+		if (this.props.formData.password !== "" || this.props.formData.password_confirmation !== "") {
 			return true
 		}
 		this.props.grabErrors({errors:['Password fields cannot be blank']})
@@ -43,7 +43,7 @@ class SignUp extends Component {
 
 	
 	render () {
-		const { user, formData } = this.props;
+		const { formData } = this.props;
 
 		const showErrors = () => {
 			if (formData.errors) {
