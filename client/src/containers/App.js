@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Header from '../components/Header';
 import { Routes } from '../components/Routes';
+import { connect } from 'react-redux';
+
+import { loadQuestions } from '../actions/questions';
 import '../styles/App.css';
 
-export default class App extends Component {
+class App extends Component {
+  componentDidMount() {
+    this.props.loadQuestions()
+  }
+
   render() {
   	const { user } = this.props;
     return (
@@ -17,4 +24,6 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect(null, {loadQuestions})(App);
 
