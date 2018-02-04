@@ -1,7 +1,7 @@
 const initialState = {
 	category: 'All',
 	questions: [],
-	results: []
+	results: [],
 }
 
 export const gameReducer = (state=initialState, action) => {
@@ -10,7 +10,7 @@ export const gameReducer = (state=initialState, action) => {
 			return Object.assign({}, state, {category: action.payload})
 		case 'UPDATE_RESULTS':
 			return Object.assign({}, state, {questions: state.questions.concat(action.payload.question)}, {results: state.results.concat(action.payload.result)})
-		case 'SUBMIT_GAME':
+		case 'RESET_BOARD':
 			return initialState
 		default:
 			return state

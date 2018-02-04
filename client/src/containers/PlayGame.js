@@ -13,7 +13,7 @@ class PlayGame extends Component {
 		if(!user.loggedIn) return <Redirect to="/" />
 
 		const playGame = () => {
-			if (game.results.length >= 10) return <GameSubmission history={history} />
+			if (game.results.length === 10) return <GameSubmission history={history} />
 			const gameQuestions = questionsByCategory(questions, game.category);
 			const question = randomQuestion(gameQuestions);
 			return <GameCard question={question} />

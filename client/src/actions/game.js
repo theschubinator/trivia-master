@@ -12,9 +12,9 @@ export const updateGameResults = (question, result) => {
 	}
 }
 
-export const submitGame = (game) => {
+export const resetBoard = (game) => {
 	return {
-		type: 'SUBMIT_GAME',
+		type: 'RESET_BOARD',
 		payload: game
 	}
 }
