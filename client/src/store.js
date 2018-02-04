@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import { currentUserReducer } from './reducers/currentUserReducer';
 import { userFormDataReducer } from './reducers/userFormDataReducer';
 import { questionsReducer } from './reducers/questionsReducer';
+import { gameReducer } from './reducers/gameReducer';
 
 const reducers = combineReducers({
 	currentUser: currentUserReducer,
 	formData: userFormDataReducer,
-	questions: questionsReducer
+	questions: questionsReducer,
+	game: gameReducer
 })
 
 export default createStore(

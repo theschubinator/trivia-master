@@ -13,7 +13,7 @@ const Header = (props) => {
 			<div>
 				<Link to="/">Home</Link>
 				<Link to={`users/${props.user.id}`}>Profile</Link>
-				<Link to="/playgame">Play Game</Link>
+				<Link to="/newgame">Start Game</Link>
 				<Link to="/questions">View Questions</Link>
 				<Link to="#" onClick={ handleSignOut }>Log Out</Link>
 			</div>
