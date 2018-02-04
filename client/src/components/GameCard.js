@@ -5,11 +5,11 @@ import { shuffle } from '../helpers/questions';
 
 const GameCard = (props) => {	
 	const { question } = props;
-	
+
 	const handleClick = (e) => {
 		const selection = e.target.innerText
 		const result = (question.answer === selection) ? true : false
-		props.updateGameResults(result)
+		props.updateGameResults(question, result)
 	}
 	//slice(2,6) grabs only the necessary keys of the question...
 	const shuffledKeys = shuffle(Object.keys(question).slice(2,6))

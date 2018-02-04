@@ -5,9 +5,9 @@ export const setGameCategory = (category) => {
 	}
 }
 
-export const updateGameResults = (result) => {
+export const updateGameResults = (question, result) => {
 	return {
 		type: 'UPDATE_RESULTS',
-		payload: result
+		payload: {question, result}
 	}
 }
