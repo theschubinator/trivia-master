@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateForm, submitForm, resetFormData } from '../actions/userForm';
 import { login, loadUser } from '../actions/users';
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
 	handleChange = (e) => {
@@ -10,11 +11,18 @@ class Login extends Component {
 		this.props.updateForm(formData);
 	}
 
+
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.props.login(this.props.formData)
-		.then(user => this.props.loadUser(user));
-		this.props.resetFormData();
+		.then(user => {
+			this.props.loadUser(user);
+			if(!user.error) {
+				this.props.resetFormData();
+				//Redirect to Profile Page!
+				this.props.history.push(`/users/${this.props.user.id}`);
+			}
+		});
 	}
 
 	render () {

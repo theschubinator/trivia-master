@@ -4,10 +4,11 @@ import Header from '../components/Header';
 import { Routes } from '../components/Routes';
 import '../styles/App.css';
 
-class App extends Component {
+export default class App extends Component {
   render() {
+  	const { user } = this.props;
     return (
-    	<Router>
+    	<Router >
 	    	<div>
 	      	<Header />
 	      	<Routes />
@@ -17,4 +18,3 @@ class App extends Component {
   }
 }
 
-export default App;

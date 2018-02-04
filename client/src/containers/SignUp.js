@@ -4,7 +4,6 @@ import { updateForm, submitForm, grabErrors, resetFormData } from '../actions/us
 import { loadUser } from '../actions/users';
 
 class SignUp extends Component {
-
 	handleChange = (e) => {
 		const { name, value } = e.target;
 		const formData = Object.assign({}, this.props.formData, { [name]: value });
@@ -19,7 +18,7 @@ class SignUp extends Component {
 			return false;
 	}
 
-	attemptToSubmitForm = () => {
+	SubmitForm = () => {
 	this.props.submitForm(this.props.formData)
 		.then(user => {
 			this.props.loadUser(user);
@@ -34,7 +33,7 @@ class SignUp extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		if (this.passwordsExist())
-	 		this.attemptToSubmitForm();	
+	 		this.SubmitForm();	
 	}
 
 	showErrors = () => {
@@ -48,7 +47,7 @@ class SignUp extends Component {
 
 	
 	render () {
-		const { formData, user } = this.props;
+		const { formData } = this.props;
 
 		return (
 			<div>

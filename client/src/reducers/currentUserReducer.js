@@ -2,16 +2,17 @@ const defaultState = {
 	id: '',
 	username: '',
 	email: '',
-	admin: ''
+	admin: '',
+	loggedIn: false
 };
 
 export const currentUserReducer = (state=defaultState, action) => {
 	switch(action.type) {
 		case 'LOAD_USER':
-			return action.payload
+			return Object.assign({}, state, { loggedIn: true}, action.payload)
 		case 'SIGN_OUT':
 			return defaultState
 		default:
 			return state
-	};
+	}
 }

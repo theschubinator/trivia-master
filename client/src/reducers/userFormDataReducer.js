@@ -15,5 +15,5 @@ export const userFormDataReducer = (state=initialState, action) => {
 			return Object.assign({}, state, action.payload)
 		default:
 			return state
-	};
+	}
 }
