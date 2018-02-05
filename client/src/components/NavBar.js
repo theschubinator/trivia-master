@@ -24,7 +24,7 @@ const NavBar = (props) => {
 				<NavLink className="NavLink" style={styles} to={`users/${props.user.id}`}>Profile</NavLink>
 				<NavLink className="NavLink" style={styles} to="/questions">View Questions</NavLink>
 				<NavLink className="NavLink" style={styles} to="/newgame">New Game</NavLink>
-				<NavLink className="NavLink" to="#" style={{...styles, ...{float: 'right'}}} onClick={ handleSignOut }>Log Out</NavLink>
+				<NavLink className="NavLink" to="#" style={{...styles, ...{float: 'right', marginRight: '20px'}}} onClick={ handleSignOut }>Log Out</NavLink>
 			</div>
 		)
 	} 
