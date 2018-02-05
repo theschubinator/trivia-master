@@ -10,7 +10,7 @@ import { Home } from '../components/Home';
 
 export const Routes = () => {
 	return (
-		<div>
+		<div className="container">
 			<Route exact path='/' component={Home} />	
 			<Route exact path='/login' component={Login} />
 			<Route exact path='/signup' component={SignUp} />

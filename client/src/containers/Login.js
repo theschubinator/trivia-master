@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { updateForm, submitForm, resetFormData } from '../actions/userForm';
 import { login, loadUser } from '../actions/users';
 import { Redirect } from 'react-router-dom';
+import '../styles/form.css';
+
+import { Button } from 'react-bootstrap';
 
 class Login extends Component {
 	handleChange = (e) => {
@@ -29,15 +32,27 @@ class Login extends Component {
 		const { formData, user } = this.props;
 
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					<label>Username</label>
-					<input type="text" name="username" value={formData.username} onChange={this.handleChange} />
-					<label>Password</label>
-					<input type="text" name="password" value={formData.password} onChange={this.handleChange} />
-					<input type="submit" />
-				</form>
-				<div>{user.error}</div>
+			<div className="row">
+				<div className="col-md-12 loginForm">
+					<form onSubmit={this.handleSubmit}>
+							<div className="username">
+								<label>Username:&nbsp;</label>
+								<input type="text" name="username" value={formData.username} 
+								  onChange={this.handleChange} placeholder="Enter Username" />
+							</div>
+							<div className="password">
+								<label>Password:&nbsp;</label>
+								<input type="password" name="password" value={formData.password} 
+								onChange={this.handleChange} placeholder="Enter Password" />
+							</div>
+							<div>
+								<Button bsStyle="info" type="submit">Login</Button>
+							</div>
+							<div className="errors">
+								{user.error}
+							</div>
+					</form>
+				</div>
 			</div>
 		)
 	}
