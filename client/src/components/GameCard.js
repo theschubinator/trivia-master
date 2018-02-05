@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateGameResults } from '../actions/game';
 import { shuffle } from '../helpers/questions';
+import '../styles/questions.css';
+import '../styles/gameQuestions.css';
 
 const GameCard = (props) => {	
 	const { question } = props;
@@ -13,13 +15,15 @@ const GameCard = (props) => {
 	}
 	//slice(2,6) grabs only the necessary keys of the question...
 	const shuffledKeys = shuffle(Object.keys(question).slice(2,6))
+
 	return (
-		<div>
+		<div className="gameCard">
 			<h2>{question.question}</h2>
-			<p onClick={handleClick}>{question[shuffledKeys[0]]}</p>
-			<p onClick={handleClick}>{question[shuffledKeys[1]]}</p>
-			<p onClick={handleClick}>{question[shuffledKeys[2]]}</p>
-			<p onClick={handleClick}>{question[shuffledKeys[3]]}</p>
+			<h4>Category: {question.category.name}</h4>
+			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[0]]}</p>
+			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[1]]}</p>
+			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[2]]}</p>
+			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[3]]}</p>
 		</div>
 	)
 }

@@ -25,3 +25,23 @@
 #gameOptions button:hover {
 	background-color: yellow;
 }
+
+.gameBoard {
+	border: 1px solid black;
+	margin: 40px 0px 0px 20px;
+	width: 200px;
+	height: 500px;
+	box-shadow: 5px 10px 10px #333333;
+	background-color: #f4ede3;
+}
+
+.gameBoard h2 {
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.gameBoard p {
+	font-size: 20px;
+	margin: 13px;
+}

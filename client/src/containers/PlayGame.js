@@ -5,6 +5,7 @@ import GameOptions from './GameOptions';
 import { questionsByCategory, randomQuestion } from '../helpers/questions';
 import GameCard from '../components/GameCard';
 import GameSubmission from '../components/GameSubmission';
+import { GameBoard } from '../components/GameBoard';
 
 class PlayGame extends Component {
 
@@ -20,9 +21,13 @@ class PlayGame extends Component {
 		}
 
 		return (
-			<div>
-				<h1>Playing Game</h1>
-				{ playGame() }
+			<div className="row">
+				<div className="col-md-10">
+					{ playGame() }
+				</div>
+				<div className="col-md-2">
+					<GameBoard />
+				</div>
 			</div>
 		)
 	}
