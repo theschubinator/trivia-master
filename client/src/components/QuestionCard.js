@@ -10,8 +10,7 @@ export const QuestionCard = (question) => {
 				<p className="correctChoice">{q.answer}</p>
 				<p className="incorrectChoice">{q.incorrect1}</p>
 				<p className="incorrectChoice">{q.incorrect2}</p>
-				<p className="incorrectChoice">{q.incorrect3}</p>
-				
+				<p className="incorrectChoice">{q.incorrect3}</p>			
 		</div>
 	)
 }

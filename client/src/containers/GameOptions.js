@@ -3,6 +3,8 @@ import { setGameCategory } from '../actions/game';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { resetBoard } from '../actions/game';
+import { Button } from 'react-bootstrap';
+import '../styles/game.css';
 
 const GameOptions = (props) => {
 	if(!props.user.loggedIn) return <Redirect to="/" />
@@ -17,12 +19,13 @@ const GameOptions = (props) => {
 	}
 
 	return (
-		<div>
-			<button name="All" onClick={handleClick}>All</button>
-			<button name="Sports" onClick={handleClick}>Sports</button>
-			<button name="History" onClick={handleClick}>History</button>
-			<button name="Entertainment" onClick={handleClick}>Entertainment</button>
-			<button name= "Science" onClick={handleClick}>Science</button>
+		<div id="gameOptions">
+			<label>Choose Category</label><br/>
+			<Button name="All" onClick={handleClick}>All</Button>
+			<Button name="Sports" onClick={handleClick}>Sports</Button>
+			<Button name="History" onClick={handleClick}>History</Button>
+			<Button name="Entertainment" onClick={handleClick}>Entertainment</Button>
+			<Button name= "Science" onClick={handleClick}>Science</Button>
 		</div>
 	)
 }
