@@ -11,8 +11,8 @@ export const userFormDataReducer = (state=initialState, action) => {
 			return action.payload
 		case 'RESET_FORM':
 			return initialState
-		case 'SHOW_ERRORS':
-			return Object.assign({}, state, action.payload)
+		// case 'SHOW_ERRORS':
+		// 	return Object.assign({}, state, action.payload)
 		default:
 			return state
 	}

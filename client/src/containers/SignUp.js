@@ -23,8 +23,9 @@ class SignUp extends Component {
 	SubmitForm = () => {
 	this.props.submitForm(this.props.formData)
 		.then(user => {
-			this.props.loadUser(user);
+			this.props.grabErrors(user);
 			if(!user.errors) {
+				this.props.loadUser(user);
 				this.props.resetFormData();
 				//Redirect to Profile Page!
 				this.props.history.push(`/users/${this.props.user.id}`);
@@ -65,11 +66,11 @@ class SignUp extends Component {
 						</div>
 						<div className="password">
 							<label>Password</label><br/>
-							<input type="text" name="password" value={formData.password} onChange={this.handleChange} />
+							<input type="password" name="password" value={formData.password} onChange={this.handleChange} />
 						</div>
 						<div className="passwordConfirmation">
 							<label>Password Confirmation</label><br/>
-							<input type="text" name="password_confirmation" value={formData.password_confirmation} onChange={this.handleChange} />
+							<input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={this.handleChange} />
 						</div>
 						<div>
 							<Button bsStyle="info" type="submit">Sign Up</Button>

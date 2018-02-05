@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateForm, submitForm, resetFormData } from '../actions/userForm';
+import { updateForm, submitForm, resetFormData, grabErrors } from '../actions/userForm';
 import { login, loadUser } from '../actions/users';
 import { Redirect } from 'react-router-dom';
 import '../styles/form.css';
@@ -19,8 +19,9 @@ class Login extends Component {
 		e.preventDefault();
 		this.props.login(this.props.formData)
 		.then(user => {
-			this.props.loadUser(user);
+				this.props.grabErrors(user)
 			if(!user.error) {
+				this.props.loadUser(user);
 				this.props.resetFormData();
 				//Redirect to Profile Page!
 				this.props.history.push(`/users/${this.props.user.id}`);
@@ -65,4 +66,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {updateForm, submitForm, resetFormData, login, loadUser })(Login);
+export default connect(mapStateToProps, {updateForm, submitForm, resetFormData, login, loadUser, grabErrors })(Login);
