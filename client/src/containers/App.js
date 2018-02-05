@@ -5,7 +5,6 @@ import { Routes } from '../components/Routes';
 import { connect } from 'react-redux';
 
 import { loadQuestions } from '../actions/questions';
-import '../styles/App.css';
 
 class App extends Component {
   componentDidMount() {

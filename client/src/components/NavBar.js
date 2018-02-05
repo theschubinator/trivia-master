@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signOut } from '../actions/users';
+import '../styles/NavBar.css';
 
 const NavBar = (props) => {
 	const handleSignOut = () => {
