@@ -9,7 +9,8 @@ const defaultState = {
 export const currentUserReducer = (state=defaultState, action) => {
 	switch(action.type) {
 		case 'LOAD_USER':
-			return Object.assign({}, state, { loggedIn: true}, action.payload)
+			// loggedIn status either true || false dpeending if errors were returned or not.
+			return Object.assign({}, state, { loggedIn: !action.payload.error}, action.payload)
 		case 'SIGN_OUT':
 			return defaultState
 		default:
