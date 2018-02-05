@@ -181,7 +181,7 @@ Question.create(
 )
 
 Question.create(
-	question: 'What assassinated President Kennedy?',
+	question: 'Who assassinated President Kennedy?',
 	answer: 'Lee Harvey Oswald',
 	incorrect1: 'John Wilkes Booth',
 	incorrect2: 'Alexander Hamilton',

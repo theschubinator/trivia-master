@@ -7,10 +7,20 @@ const showQuestions = (props) => {
 	if(!props.user.loggedIn) return <Redirect to="/" />
 	
 	const showQuestion = props.questions.map(question => {
-		return <QuestionCard question={question} />
+		return (
+				<div className="col-md-6">
+					<QuestionCard question={question} />
+				</div>
+		)
+		
 	})
 
-	return showQuestion
+	return (
+		<div ClassName="row">
+			<p id="questionNote"><b>Note: </b><i>Green signifies the correct answer.</i></p>
+			{showQuestion}
+		</div>
+	)
 }
 
 const mapStateToProps = (state) => {

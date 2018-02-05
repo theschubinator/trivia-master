@@ -1,0 +1,38 @@
+.questionCard {
+	border: 1px solid black;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	padding: 10px;
+	background-color: #1c99b2;
+	box-shadow: 5px 10px #333333;
+	height: 300px;
+}
+
+.questionCard h3 {
+	font-size: 22px;
+	font-weight: bold;
+	margin-left: 14px;
+}
+
+.questionCard h4 {
+	text-align: right;
+}
+
+.questionCard p {
+	font-size: 16px;
+	background-color: #90bcce;
+	border: 1px solid black;
+	margin: 0;
+	padding: 5px;
+}
+
+.questionCard p.correctChoice {
+	background-color: #61b761;
+}
+
+#questionNote {
+	font-size: 18px;
+	margin: 20px 0px -7px 15px;
+/*	margin-top: 20px;
+	margin-bottom: -10px;*/
+}
