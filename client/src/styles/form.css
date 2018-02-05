@@ -11,6 +11,10 @@ form div {
 	margin: 10px;
 }
 
+form div input {
+	width: 330px;
+}
+
 .password input {
 	margin-left: 2px;
 }

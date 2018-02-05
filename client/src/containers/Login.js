@@ -38,12 +38,12 @@ class Login extends Component {
 							<div className="username">
 								<label>Username:&nbsp;</label>
 								<input type="text" name="username" value={formData.username} 
-								  onChange={this.handleChange} placeholder="Enter Username" />
+								  onChange={this.handleChange} />
 							</div>
 							<div className="password">
 								<label>Password:&nbsp;</label>
 								<input type="password" name="password" value={formData.password} 
-								onChange={this.handleChange} placeholder="Enter Password" />
+								onChange={this.handleChange} />
 							</div>
 							<div>
 								<Button bsStyle="info" type="submit">Login</Button>

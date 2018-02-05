@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateForm, submitForm, grabErrors, resetFormData } from '../actions/userForm';
 import { loadUser } from '../actions/users';
+import { Button } from 'react-bootstrap';
+import '../styles/form.css';
 
 class SignUp extends Component {
 	handleChange = (e) => {
@@ -50,19 +52,33 @@ class SignUp extends Component {
 		const { formData } = this.props;
 
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					<label>Username</label>
-					<input type="text" name="username" value={formData.username} onChange={this.handleChange} />
-					<label>Email</label>
-					<input type="text" name="email" value={formData.email} onChange={this.handleChange} />
-					<label>Password</label>
-					<input type="text" name="password" value={formData.password} onChange={this.handleChange} />
-					<label>Password Confirmation</label>
-					<input type="text" name="password_confirmation" value={formData.password_confirmation} onChange={this.handleChange} />
-					<input type="submit" />
-				</form>
-				<div>{this.showErrors()}</div>
+			<div className="row">
+				<div className="col-md-12 loginForm">
+					<form onSubmit={this.handleSubmit}>
+						<div className="username">
+							<label>Username</label><br/>
+							<input type="text" name="username" value={formData.username} onChange={this.handleChange} />
+						</div>
+						<div className="email">
+							<label>Email</label><br/>
+							<input type="text" name="email" value={formData.email} onChange={this.handleChange} />
+						</div>
+						<div className="password">
+							<label>Password</label><br/>
+							<input type="text" name="password" value={formData.password} onChange={this.handleChange} />
+						</div>
+						<div className="passwordConfirmation">
+							<label>Password Confirmation</label><br/>
+							<input type="text" name="password_confirmation" value={formData.password_confirmation} onChange={this.handleChange} />
+						</div>
+						<div>
+							<Button bsStyle="info" type="submit">Sign Up</Button>
+						</div>
+						<div className="errors">
+							{this.showErrors()}
+						</div>
+					</form>
+				</div>
 			</div>
 		)
 	}
