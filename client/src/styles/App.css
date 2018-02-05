@@ -1,3 +1,35 @@
-.App {
-  text-align: center;
+/* NavBar */
+#header {
+  background-color: #333;
+  height: 50px;
+}
+
+.NavLink {
+	color: white;
+	float: left;
+	text-align: center;
+	padding: 13px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.NavLink:hover {
+	text-decoration: none;
+	background-color: #1c99b2;
+	color: black;
+}
+
+#homeLink {
+	font-size: 26px;
+	float: left;
+	text-align: center;
+	padding: 7px;
+	margin-left: 10px;
+	text-decoration: none;
+	color: white;
+}
+
+#logout {
+	float: right;
+	margin-right: 20px;
 }
