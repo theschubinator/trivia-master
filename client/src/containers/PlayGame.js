@@ -26,7 +26,7 @@ class PlayGame extends Component {
 					{ playGame() }
 				</div>
 				<div className="col-md-2">
-					<GameBoard />
+					<GameBoard game={game}/>
 				</div>
 			</div>
 		)

@@ -5,6 +5,7 @@ import PlayGame from '../containers/PlayGame';
 
 const GameSubmission = (props) => {
 	
+	 //submit game here
 	const handleClick = (e) => {
 		if(e.target.name === 'yes') { 
 			props.resetBoard(props.game)

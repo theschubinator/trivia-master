@@ -29,8 +29,8 @@
 .gameBoard {
 	border: 1px solid black;
 	margin: 40px 0px 0px 20px;
-	width: 200px;
-	height: 500px;
+	width: 250px;
+	height: 620px;
 	box-shadow: 5px 10px 10px #333333;
 	background-color: #f4ede3;
 }
@@ -41,7 +41,18 @@
 	margin-bottom: 20px;
 }
 
-.gameBoard p {
-	font-size: 20px;
-	margin: 13px;
+.gameBoard li {
+	font-size: 30px;
+	margin: 10px 20px 5px 15px;
+	box-shadow: 4px 4px 10px black;
+}
+
+.IncorrectResult {
+	background-color: red;
+	padding-left: 10px;
+}
+
+.CorrectResult {
+	background-color: green;
+	padding-left: 10px;
 }
