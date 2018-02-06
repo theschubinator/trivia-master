@@ -1,9 +1,10 @@
 export const questionsByCategory = (questions, gameCategory, categories) => {
-	if (gameCategory !== 'All')
-		var category = categories.filter(cat => cat.name === gameCategory)[0];
+	if (gameCategory !== 'All') {
+		const category = categories.filter(cat => cat.name === gameCategory)[0];
 		return questions.filter(q => q.category_id == category.id)
-		// return questions.filter(question => question.category.name === category)
-	// return questions
+	} else {
+		return questions
+	}
 }	
 
 export const randomQuestion = (questions) => {
