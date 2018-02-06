@@ -6,6 +6,7 @@ import { questionsByCategory, randomQuestion } from '../helpers/questions';
 import GameCard from '../components/GameCard';
 import GameSubmission from '../components/GameSubmission';
 import { GameBoard } from '../components/GameBoard';
+import { resetBoard } from '../actions/game';
 
 class PlayGame extends Component {
 
@@ -14,7 +15,9 @@ class PlayGame extends Component {
 		if(!user.loggedIn) return <Redirect to="/" />
 
 		const playGame = () => {
-			if (game.results.length === 10) return <GameSubmission history={history} />
+			if (game.results.length === 10) {
+				return <GameSubmission history={history} />
+			}
 			const gameQuestions = questionsByCategory(questions, game.category);
 			const question = randomQuestion(gameQuestions);
 			return <GameCard question={question} />
@@ -41,4 +44,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps)(PlayGame);
+export default connect(mapStateToProps, { resetBoard })(PlayGame);

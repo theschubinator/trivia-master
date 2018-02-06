@@ -13,6 +13,7 @@ export const resetFormData = () => {
 }
 
 export const grabErrors = (errors) => {
+	debugger
 	return {
 		type: "SHOW_ERRORS",
 		payload: errors

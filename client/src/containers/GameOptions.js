@@ -12,9 +12,6 @@ const GameOptions = (props) => {
 	const handleClick = (e) => {
 		const category = e.target.name
 		props.setGameCategory(category)
-		//fixes an issue if a user navagates from the GameSubmission without
-		// selecting to play again or not. Board is then reset here.
-		if(props.game.results.length > 0) props.resetBoard(props.game)
 		props.history.push("/newgame/start")
 	}
 

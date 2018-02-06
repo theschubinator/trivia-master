@@ -19,13 +19,12 @@ class Login extends Component {
 		e.preventDefault();
 		this.props.login(this.props.formData)
 		.then(user => {
-				this.props.grabErrors(user)
 			if(!user.error) {
 				this.props.loadUser(user);
 				this.props.resetFormData();
 				//Redirect to Profile Page!
 				this.props.history.push(`/users/${this.props.user.id}`);
-			}
+			} else { this.props.grabErrors(user) }
 		});
 	}
 

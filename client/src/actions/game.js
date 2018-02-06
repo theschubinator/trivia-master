@@ -1,3 +1,4 @@
+//** ACTION Creators
 export const setGameCategory = (category) => {
 	return {
 		type: 'SET_CATEGORY',
@@ -12,9 +13,38 @@ export const updateGameResults = (question, result) => {
 	}
 }
 
-export const resetBoard = (game) => {
+export const resetBoard = () => {
 	return {
-		type: 'RESET_BOARD',
+		type: 'RESET_BOARD'
+	}
+}
+
+const saveGame = (game) => {
+	return {
+		type: 'SAVE_GAME',
 		payload: game
+	}
+}
+
+// ** ASYNC Actions
+export const submitGame = (game, user) => {
+	const gameData = {
+		question_ids: game.questions.map(question => question.id),
+		results: game.results,
+		user_id: user.id
+	}
+
+	return dispatch => {
+		return fetch('/api/games', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ gameData: gameData })
+		})
+		.then(response => response.json())
+		.catch(error => console.log(error))
+		.then(game => {dispatch(saveGame(game))})
+
 	}
 }
