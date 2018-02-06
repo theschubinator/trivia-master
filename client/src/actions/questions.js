@@ -6,6 +6,13 @@ const setQuestions = (questions) => {
 	}
 }
 
+const setCategories = (categories) => {
+	return {
+		type: 'LOAD_CATEGORIES',
+		payload: categories
+	}
+}
+
 // ** ASYNC actions
 export const loadQuestions = () => {
 	return dispatch => {
@@ -13,5 +20,14 @@ export const loadQuestions = () => {
 		.then(response => response.json())
 		.catch(error => console.log(error))
 		.then(questions => dispatch(setQuestions(questions)))
+	}
+}
+
+export const loadCategories = () => {
+	return dispatch => {
+		return fetch('/api/categories')
+		.then(response => response.json())
+		.catch(error => console.log(error))
+		.then(categories => dispatch(setCategories(categories)))
 	}
 }
