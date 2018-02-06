@@ -20,7 +20,7 @@ class PlayGame extends Component {
 			}
 			const gameQuestions = questionsByCategory(questions, game.category, categories);
 			const question = randomQuestion(gameQuestions);
-			const category = categories.sort(cat => cat.id === question.category_id)[0]
+			const category = categories.filter(cat => cat.id === question.category_id)[0]
 			return <GameCard question={question} category={category.name} />
 		}
 
