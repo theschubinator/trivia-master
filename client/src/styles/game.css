@@ -1,5 +1,4 @@
 #gameOptions {
-	border: 1px solid black;
 	margin: 20px;
 	width: 514px;
 	padding: 20px 10px 20px 10px;
@@ -56,3 +55,24 @@
 	background-color: green;
 	padding-left: 10px;
 }
+
+.replayGame {
+	margin: 250px;
+	width: 350px;
+	padding: 20px 10px 20px 10px;
+	background-color: #90bcce;
+	box-shadow: 5px 10px 20px #333333;
+}
+
+.replayGame button {
+	display: inline-block;
+	margin: 10px 5px 10px 17px;
+	background-color: #1c99b2;
+	box-shadow: 4px 4px 10px black;
+	font-size: 18px;
+}
+
+.replayGame button:hover {
+	background-color: yellow;
+}
+

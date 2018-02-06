@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { resetBoard } from '../actions/game';
+import { Button } from 'react-bootstrap';
 import PlayGame from '../containers/PlayGame';
 
 const GameSubmission = (props) => {
@@ -18,9 +19,9 @@ const GameSubmission = (props) => {
 	}
 
 	return (
-		<div>
-			<button name="yes" onClick={handleClick}>Play Again</button>
-			<button name= "no" onClick={handleClick}>Don't Play Again</button>
+		<div className="replayGame">
+			<Button name="yes" onClick={handleClick}>Play Again</Button>
+			<Button name= "no" onClick={handleClick}>Don't Play Again</Button>
 		</div>
 	)
 }
