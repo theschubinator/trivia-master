@@ -14,8 +14,8 @@ export const currentUserReducer = (state=defaultState, action) => {
 			return action.payload
 		case 'SIGN_OUT':
 			return defaultState
-		case 'SAVE_GAME':
-			return Object.assign({}, state, {userGames: state.userGames.concat(action.payload)})
+		// case 'SAVE_GAME':
+		// 	return Object.assign({}, state, {userGames: state.userGames.concat(action.payload)})
 		default:
 			return state
 	}

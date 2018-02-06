@@ -21,6 +21,7 @@ export const resetBoard = () => {
 }
 
 const saveGame = (gameData) => {
+
 	const game = {
 		questions: gameData.questions,
 		results: gameData.results
@@ -41,7 +42,7 @@ export const submitGame = (game, user) => {
 	}
 
 	return dispatch => {
-		return fetch('/api/games', {
+		return fetch(`/api/users/${user.id}/games`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
