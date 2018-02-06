@@ -4,7 +4,6 @@ const defaultState = {
 	email: '',
 	admin: '',
 	loggedIn: false,
-	userGames: []
 };
 
 export const currentUserReducer = (state=defaultState, action) => {

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
-  	resources :users
+  	resources :users do
+  		resources :games
+  	end
   	resources :questions
-  	resources :games
   	resources :categories, only: [:index, :show]
   	resources :sessions, only: [:create]
   end
