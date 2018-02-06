@@ -23,13 +23,12 @@ class SignUp extends Component {
 	SubmitForm = () => {
 	this.props.submitForm(this.props.formData)
 		.then(user => {
-			this.props.grabErrors(user);
 			if(!user.errors) {
 				this.props.loadUser(user);
 				this.props.resetFormData();
 				//Redirect to Profile Page!
 				this.props.history.push(`/users/${this.props.user.id}`);
-			} 
+			} else { this.props.grabErrors(user) }
 		})	
 	}
 
