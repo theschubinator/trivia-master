@@ -11,16 +11,17 @@ import { resetBoard } from '../actions/game';
 class PlayGame extends Component {
 
 	render () {
-		const { user, game, questions, history } = this.props
+		const { user, game, questions, history, categories } = this.props
 		if(!user.loggedIn) return <Redirect to="/" />
 
 		const playGame = () => {
 			if (game.results.length === 10) {
 				return <GameSubmission history={history} />
 			}
-			const gameQuestions = questionsByCategory(questions, game.category);
+			const gameQuestions = questionsByCategory(questions, game.category, categories);
 			const question = randomQuestion(gameQuestions);
-			return <GameCard question={question} />
+			const category = categories.sort(cat => cat.id === question.category_id)[0]
+			return <GameCard question={question} category={category.name} />
 		}
 
 		return (
@@ -40,7 +41,8 @@ const mapStateToProps = (state) => {
 	return {
 		user: state.currentUser,
 		game: state.game,
-		questions: state.questions
+		questions: state.questions,
+		categories: state.categories
 	}
 }
 

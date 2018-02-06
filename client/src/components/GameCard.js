@@ -6,7 +6,7 @@ import '../styles/questions.css';
 import '../styles/gameQuestions.css';
 
 const GameCard = (props) => {	
-	const { question } = props;
+	const { question, category } = props
 
 	const handleClick = (e) => {
 		const selection = e.target.innerText
@@ -19,7 +19,7 @@ const GameCard = (props) => {
 	return (
 		<div className="gameCard">
 			<h2>{question.question}</h2>
-			<h4>Category: {question.category.name}</h4>
+			<h4>Category: {category}</h4>
 			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[0]]}</p>
 			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[1]]}</p>
 			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[2]]}</p>
