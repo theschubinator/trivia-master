@@ -19,7 +19,12 @@ export const resetBoard = () => {
 	}
 }
 
-const saveGame = (game) => {
+const saveGame = (gameData) => {
+	const game = {
+		questions: gameData.questions,
+		results: gameData.results
+	}
+
 	return {
 		type: 'SAVE_GAME',
 		payload: game
