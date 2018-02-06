@@ -1,13 +1,25 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :id, :username, :email, :admin, :userGames
   has_many :questions
-  # has_many :games
 
   def userGames
-  	games = []
+  	allGames = []
   	object.games.map do | game |
-  		games << {questions: game.questions, results: game.results}
+  		allGames << {questions: question(game.questions), results: result(game.results)}
   	end
-  	games
+  	allGames
   end
+
+  def question(questions)
+  	questions.map do | question |
+  		{question: question.question, answer: question.answer, incorrect1: question.incorrect1, incorrect2: question.incorrect2, incorrect3: question.incorrect3, category: question.category.name }
+  	end
+  end
+
+  def result(results)
+  	results.map do | result |
+  		{correct: result.correct}
+  	end
+  end
+
 end
