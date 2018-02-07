@@ -20,16 +20,16 @@ export const resetBoard = () => {
 	}
 }
 
-const saveGame = (gameData) => {
-
-	const game = {
-		questions: gameData.questions,
-		results: gameData.results
+export const saveGame = (game, questions) => {
+	let gameData = [];
+	for(let i=0; i < 10; i++) {
+		const question = questions.find(question => question.id === game.questions[i].id)
+		gameData.push({...question, ...game.results[i]})	
 	}
 
 	return {
 		type: 'SAVE_GAME',
-		payload: game
+		payload: gameData
 	}
 }
 
@@ -51,7 +51,7 @@ export const submitGame = (game, user) => {
 		})
 		.then(response => response.json())
 		.catch(error => console.log(error))
-		.then(game => {dispatch(saveGame(game))})
+		// .then(game => {dispatch(saveGame(game))})
 
 	}
 }

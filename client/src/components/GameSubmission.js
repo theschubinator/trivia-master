@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { resetBoard, submitGame } from '../actions/game';
+import { resetBoard, submitGame, saveGame } from '../actions/game';
 import { Button } from 'react-bootstrap';
 import PlayGame from '../containers/PlayGame';
 
 class GameSubmission extends Component {
 	componentWillMount() {
 		this.props.submitGame(this.props.game, this.props.user)
+		.then(game => {this.props.saveGame(game, this.props.questions)})
 	}
 
 	componentWillUnmount() {
@@ -35,8 +36,9 @@ class GameSubmission extends Component {
 const mapStateToProps = (state) => {
 	return {
 		game: state.game,
-		user: state.currentUser
+		user: state.currentUser,
+		questions: state.questions
 	}
 }
 
-export default connect(mapStateToProps, {resetBoard, submitGame})(GameSubmission);
+export default connect(mapStateToProps, {resetBoard, submitGame, saveGame})(GameSubmission);
