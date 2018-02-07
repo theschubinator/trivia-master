@@ -22,7 +22,7 @@ const NavBar = (props) => {
 		return (
 			<div id='header'>
 				<NavLink id="homeLink" style={styles} to="/">Trivia Master</NavLink>
-				<NavLink className="NavLink" style={styles} to={`users/${props.user.id}`}>Profile</NavLink>
+				<NavLink className="NavLink" style={styles} to={`/users/${props.user.id}`}>Profile</NavLink>
 				<NavLink className="NavLink" style={styles} to="/questions">View Questions</NavLink>
 				<NavLink className="NavLink" style={styles} to="/newgame">New Game</NavLink>
 				<NavLink className="NavLink" to="#" style={{...styles, ...{float: 'right', marginRight: '20px'}}} onClick={ handleSignOut }>Log Out</NavLink>
