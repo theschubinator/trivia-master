@@ -7,7 +7,6 @@ import PlayGame from '../containers/PlayGame';
 class GameSubmission extends Component {
 	componentWillMount() {
 		this.props.submitGame(this.props.game, this.props.user)
-		// .then(game => {this.props.saveGame(game, this.props.questions)})
 	}
 
 	componentWillUnmount() {

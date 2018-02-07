@@ -21,14 +21,20 @@ export const resetBoard = () => {
 }
 
 export const saveGame = (game) => {
-	// let gameData = [];
-	// for(let i=0; i < 10; i++) {
-	// 	const question = questions.find(question => question.id === game.questions[i].id)
-	// 	gameData.push({...question, ...game.results[i]})	
-	// }
 
 	return {
 		type: 'SAVE_GAME',
+		payload: game
+	}
+}
+
+export const setGame = (gameData) => {
+	let game = {questions: []}
+	for(let i=0; i < 10; i++) {
+		game.questions.push({...gameData.questions[i], correct: gameData.results[i] })
+	}
+	return {
+		type: 'LOAD_GAME_QUESTIONS',
 		payload: game
 	}
 }
@@ -55,5 +61,13 @@ export const submitGame = (game, user) => {
 		.catch(error => console.log(error))
 		.then(game => {dispatch(saveGame(game))})
 
+	}
+}
+
+export const loadQuestion = (url) => {
+	return dispatch => {
+		return fetch(`/api/${url}`)
+			.then(response => response.json())
+			.catch(error => console.log(error))
 	}
 }

@@ -13,15 +13,6 @@ export const signOut = () => {
 } 
 
 const loadGames = (games) => {
-	// //merge question and result into one object...
-	// const gamesData = games.map(game => {
-	// 	let gameData = []
-	// 	for(let i=0; i < 10; i++) {
-	// 		const question = questions.find(question => question.id === game.questions[i].id)
-	// 		 gameData.push({...question, ...game.results[i]})
-	// 	}
-	// 	return {id:game.id, category:game.category, ...gameData}
-	// });
 
 	return {
 		type: 'LOAD_USER_GAMES',

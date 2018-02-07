@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { loadQuestion } from '../actions/questions';
-import { setGame } from '../actions/questions';
+import { loadQuestion, setGame } from '../actions/game';
 import { OldGameQuestionCard } from './OldGameQuestionCard';
 
 const ShowGame = ({user, oldGame}) => {

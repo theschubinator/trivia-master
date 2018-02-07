@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { loadQuestion, setGame } from '../actions/questions';
+import { loadQuestion, setGame } from '../actions/game';
 
 export const GameResults = ({game, user, history, loadQuestion, setGame}) => {
 	const handleClick = () => {
