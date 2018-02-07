@@ -12,10 +12,18 @@ export const signOut = () => {
 	};
 } 
 
-const loadGames = (games) => {
+const loadGames = (games, questions) => {
+	//merge question and result into one object...
+	const gameData = games.map(game => {
+		for(let i=0; i < 11; i++) {
+			const question = questions.find(question => question.id === game.questions[i].id)
+			return {...question, ...game.results[i]}
+		}
+	})
+
 	return {
 		type: 'LOAD_USER_GAMES',
-		payload: games
+		payload: gameData
 	}
 }
 
@@ -38,11 +46,11 @@ export const login = (data) => {
 	}
 }
 
-export const loadUserGames = (id) => {
+export const loadUserGames = (id, questions) => {
 	return dispatch => {
 		 fetch(`/api/users/${id}/games`)
 		 .catch(error => (console.log(error)))
 		.then(response => response.json())
-		.then(games => dispatch(loadGames(games)))
+		.then(games => dispatch(loadGames(games, questions)))
 	}
 }

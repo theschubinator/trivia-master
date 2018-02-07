@@ -18,10 +18,10 @@ class PlayGame extends Component {
 			if (game.results.length === 10) {
 				return <GameSubmission history={history} />
 			}
-			const gameQuestions = questionsByCategory(questions, game.category, categories);
+			const gameQuestions = questionsByCategory(questions, game.category);
 			const question = randomQuestion(gameQuestions);
-			const category = categories.filter(cat => cat.id === question.category_id)[0]
-			return <GameCard question={question} category={category.name} />
+			// const category = categories.filter(cat => cat.id === question.category_id)[0]
+			return <GameCard question={question} />
 		}
 
 		return (
@@ -41,8 +41,7 @@ const mapStateToProps = (state) => {
 	return {
 		user: state.currentUser,
 		game: state.game,
-		questions: state.questions,
-		categories: state.categories
+		questions: state.questions
 	}
 }
 

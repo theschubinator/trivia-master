@@ -21,7 +21,7 @@ class Login extends Component {
 		.then(user => {
 			if(!user.error) {
 				this.props.loadUser(user);
-				this.props.loadUserGames(user.id);
+				this.props.loadUserGames(user.id, this.props.questions);
 				this.props.resetFormData();
 				//Redirect to Profile Page!
 				this.props.history.push(`/users/${this.props.user.id}`);
@@ -62,7 +62,8 @@ class Login extends Component {
 const mapStateToProps = (state) => {
 	return {
 		formData: state.formData,
-		user: state.currentUser
+		user: state.currentUser,
+		questions: state.questions
 	}
 }
 

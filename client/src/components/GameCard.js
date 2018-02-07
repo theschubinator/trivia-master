@@ -5,13 +5,12 @@ import { shuffle } from '../helpers/questions';
 import '../styles/questions.css';
 import '../styles/gameQuestions.css';
 
-const GameCard = (props) => {	
-	const { question, category } = props
-
+const GameCard = ({question, updateGameResults}) => {	
+	
 	const handleClick = (e) => {
 		const selection = e.target.innerText
 		const result = (question.answer === selection) ? true : false
-		props.updateGameResults(question, result)
+		updateGameResults(question, result)
 	}
 	//slice(2,6) grabs only the necessary keys of the question...
 	const shuffledKeys = shuffle(Object.keys(question).slice(2,6))
@@ -19,7 +18,7 @@ const GameCard = (props) => {
 	return (
 		<div className="gameCard">
 			<h2>{question.question}</h2>
-			<h4>Category: {category}</h4>
+			<h4>Category: {question.category.name}</h4>
 			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[0]]}</p>
 			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[1]]}</p>
 			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[2]]}</p>

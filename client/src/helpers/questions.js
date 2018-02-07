@@ -1,7 +1,6 @@
-export const questionsByCategory = (questions, gameCategory, categories) => {
+export const questionsByCategory = (questions, gameCategory) => {
 	if (gameCategory !== 'All') {
-		const category = categories.filter(cat => cat.name === gameCategory)[0];
-		return questions.filter(q => q.category_id == category.id)
+		return questions.filter(question => question.category.name === gameCategory)
 	} else {
 		return questions
 	}

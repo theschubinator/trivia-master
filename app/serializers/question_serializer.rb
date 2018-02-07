@@ -1,5 +1,5 @@
 class QuestionSerializer < ActiveModel::Serializer
-  attributes :id, :question, :answer, :incorrect1, :incorrect2, :incorrect3, :category_id
+  attributes :id, :question, :answer, :incorrect1, :incorrect2, :incorrect3
   # belongs_to :user
-  # belongs_to :category
+  belongs_to :category, serializer: QuestionsCategorySerializer
 end
