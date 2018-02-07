@@ -11,8 +11,7 @@ const UserStatistics = ({userGames, questions, categories}) => {
 
 	return (
 		<div>
-			<h1>stats</h1>
-			<p>Games Played: { gamesPlayed }</p>
+			<h1>Games Played: { gamesPlayed }</h1>
 			<ol>
 				{ viewGame }
 			</ol>

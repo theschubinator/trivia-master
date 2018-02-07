@@ -7,9 +7,22 @@ const UserProfile = ({user, userGames, questions, categories}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
 
 	return (
-		<div>
-			<h1>{user.username}</h1>
-			<UserStatistics userGames={userGames} questions={questions} categories={categories} />
+		<div className="row">
+			<div className="col-md-10">
+				<h1>{user.username}</h1>
+			</div>
+			<div className="row">
+				<div className="col-md-4">
+					<UserStatistics userGames={userGames} questions={questions} categories={categories} />
+				</div>
+				<div className="col-md-4">
+					<h1>Game Board</h1>
+				</div>
+				<div className="col-md-4">
+					<h1>Leader Board</h1>
+				</div>
+			</div>
+
 		</div>
 		
 	)
