@@ -1,5 +1,23 @@
 {
-	"scripts": {
-		"postinstall": "cd client && npm install"
-	}
-}
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "https://trivia-master.herokuapp.com/",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0"
+  },
+  "scripts": {
+    "start": "client/react-scripts start",
+    "build": "client/react-scripts build",
+    "test": "client/react-scripts test --env=jsdom",
+    "eject": "client/react-scripts eject"
+  },
+  "engines": {
+    "node": "7.8.0",
+    "npm": "4.2.0"
+  }
+} 
