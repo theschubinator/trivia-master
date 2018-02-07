@@ -36,6 +36,7 @@ export const saveGame = (game, questions) => {
 // ** ASYNC Actions
 export const submitGame = (game, user) => {
 	const gameData = {
+		category: game.category,
 		question_ids: game.questions.map(question => question.id),
 		results: game.results,
 		user_id: user.id

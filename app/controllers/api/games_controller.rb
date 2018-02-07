@@ -1,7 +1,7 @@
 class Api::GamesController < ApplicationController
 		before_action :find_user
 	def index
-		@games = @user.games
+		@games = @user.games 
 		render json: @games
 	end
 
@@ -16,7 +16,7 @@ class Api::GamesController < ApplicationController
 
 	private
 		def game_params
-			params.require(:gameData).permit(:user_id, question_ids:[], results:[])
+			params.require(:gameData).permit(:user_id, :category, question_ids:[], results:[])
 		end
 
 		def find_user
