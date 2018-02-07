@@ -20,16 +20,16 @@ export const resetBoard = () => {
 	}
 }
 
-export const saveGame = (game, questions) => {
-	let gameData = [];
-	for(let i=0; i < 10; i++) {
-		const question = questions.find(question => question.id === game.questions[i].id)
-		gameData.push({...question, ...game.results[i]})	
-	}
+export const saveGame = (game) => {
+	// let gameData = [];
+	// for(let i=0; i < 10; i++) {
+	// 	const question = questions.find(question => question.id === game.questions[i].id)
+	// 	gameData.push({...question, ...game.results[i]})	
+	// }
 
 	return {
 		type: 'SAVE_GAME',
-		payload: gameData
+		payload: game
 	}
 }
 
@@ -37,6 +37,7 @@ export const saveGame = (game, questions) => {
 export const submitGame = (game, user) => {
 	const gameData = {
 		category: game.category,
+		correct: game.results.filter(result => result).length,
 		question_ids: game.questions.map(question => question.id),
 		results: game.results,
 		user_id: user.id
@@ -52,7 +53,7 @@ export const submitGame = (game, user) => {
 		})
 		.then(response => response.json())
 		.catch(error => console.log(error))
-		// .then(game => {dispatch(saveGame(game))})
+		.then(game => {dispatch(saveGame(game))})
 
 	}
 }

@@ -16,7 +16,7 @@ class Api::GamesController < ApplicationController
 
 	private
 		def game_params
-			params.require(:gameData).permit(:user_id, :category, question_ids:[], results:[])
+			params.require(:gameData).permit(:user_id, :category, :correct, question_ids:[], results:[])
 		end
 
 		def find_user
