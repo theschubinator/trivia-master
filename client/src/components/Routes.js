@@ -4,7 +4,7 @@ import Login from '../containers/Login';
 import SignUp from '../containers/SignUp';
 import PlayGame from '../containers/PlayGame';
 import GameOptions from '../containers/GameOptions';
-import UserProfile from '../components/UserProfile';
+import UserProfile from '../containers/UserProfile';
 import ShowQuestions from '../containers/ShowQuestions';
 import { Home } from '../components/Home';
 

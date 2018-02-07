@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { GameResults } from '../components/GameResults';
 
-const UserStatistics = (props) => {
-	const gamesPlayed = props.userGames.length
-	// const totalCorrect = props.userGames.results.filter(result => result.correct === true)
-	const viewGame = props.userGames.map(game => {
+const UserStatistics = ({userGames, questions, categories}) => {
+	const gamesPlayed = userGames.length
+	
+	const viewGame = userGames.map(game => {
 		return <li><GameResults game={game} /></li>
 	})
 
