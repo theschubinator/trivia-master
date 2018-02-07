@@ -6,6 +6,7 @@ import PlayGame from '../containers/PlayGame';
 import GameOptions from '../containers/GameOptions';
 import UserProfile from '../containers/UserProfile';
 import ShowQuestions from '../containers/ShowQuestions';
+import ShowGame from '../components/ShowGame';
 import { Home } from '../components/Home';
 
 export const Routes = () => {
@@ -18,6 +19,7 @@ export const Routes = () => {
 			<Route exact path='/newgame/start' component={PlayGame} />
 			<Route exact path='/users/:id' component={UserProfile} />
 			<Route exact path='/questions' component={ShowQuestions} />
+			<Route exact path='/users/:id/games/:game_id' component={ShowGame} />
 		</div>
 	)
 };

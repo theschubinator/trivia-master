@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { GameResults } from '../components/GameResults';
+import GameResults from '../components/GameResults';
 
-const UserStatistics = ({userGames, questions, categories}) => {
+const UserStatistics = ({userGames, user, history}) => {
 	const gamesPlayed = userGames.length
 	
 	const viewGame = userGames.map(game => {
-		return <li><GameResults game={game} /></li>
+		return <li><GameResults game={game} history={history} /></li>
 	})
 
 	return (
@@ -22,8 +22,7 @@ const UserStatistics = ({userGames, questions, categories}) => {
 const mapStateToProps = (state) => {
 	return {
 		userGames: state.userGames,
-		questions: state.questions,
-		categories: state.categories
+		user: state.currentUser
 	}
 }
 export default connect(mapStateToProps)(UserStatistics);

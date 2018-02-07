@@ -34,3 +34,11 @@
 	font-size: 18px;
 	margin: 20px 0px -7px 15px;
 }
+
+.answeredCorrect {
+	background-color: green;
+}
+
+.answeredWrong {
+	background-color: red;
+}

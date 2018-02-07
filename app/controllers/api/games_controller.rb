@@ -5,6 +5,11 @@ class Api::GamesController < ApplicationController
 		render json: @games
 	end
 
+	def show
+		game = @user.games.find(params[:id])
+		render json: { questions: game.questions, results: game.results.pluck(:correct)}
+	end
+
 	def create
 		game = Game.new(game_params)
 		if game.save
