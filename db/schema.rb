@@ -61,16 +61,6 @@ ActiveRecord::Schema.define(version: 20180208031736) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_stats", force: :cascade do |t|
-    t.string "UserStats"
-    t.integer "total"
-    t.integer "sports"
-    t.integer "history"
-    t.integer "entertainment"
-    t.integer "science"
-    t.integer "user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
