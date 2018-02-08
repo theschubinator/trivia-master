@@ -6,6 +6,13 @@ export const loadUser = (user) => {
 	}
 }
 
+const getUsers = (users) => {
+	return {
+		type: 'LOAD_USERS',
+		payload: users
+	}
+}
+
 export const signOut = () => {
 	return {
 		type: 'SIGN_OUT'
@@ -45,5 +52,14 @@ export const loadUserGames = (id, questions) => {
 		 .catch(error => (console.log(error)))
 		.then(response => response.json())
 		.then(games => dispatch(loadGames(games)))
+	}
+}
+
+export const loadUsers = () => {
+	return dispatch => {
+		return fetch('/api/users')
+		.catch(error => console.log(error))
+		.then(response => response.json())
+		.then(users => dispatch(getUsers(users)))
 	}
 }

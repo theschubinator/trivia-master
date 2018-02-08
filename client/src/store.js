@@ -7,9 +7,11 @@ import { questionsReducer } from './reducers/questionsReducer';
 import { gameReducer } from './reducers/gameReducer';
 import { categoriesReducer } from './reducers/categoriesReducer';
 import { userGameReducer } from './reducers/userGameReducer';
+import { usersReducer } from './reducers/usersReducer';
 
 const reducers = combineReducers({
 	currentUser: currentUserReducer,
+	users: usersReducer,
 	formData: userFormDataReducer,
 	questions: questionsReducer,
 	oldGame: userGameReducer,
