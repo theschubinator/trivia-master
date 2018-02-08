@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import GameResults from '../components/GameResults';
 
-const UserStatistics = ({userGames, user, history}) => {
+const UserGames = ({userGames, user, history}) => {
 	const gamesPlayed = userGames.length
 	
 	const viewGame = userGames.map(game => {
@@ -25,4 +25,4 @@ const mapStateToProps = (state) => {
 		user: state.currentUser
 	}
 }
-export default connect(mapStateToProps)(UserStatistics);
+export default connect(mapStateToProps)(UserGames);
