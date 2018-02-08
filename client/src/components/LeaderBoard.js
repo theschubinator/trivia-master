@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadUsers } from '../actions/users';
 import TopUser from './TopUser';
-import { Button } from 'react-bootstrap';
+import { Button, Well } from 'react-bootstrap';
 
 class LeaderBoard extends Component {
 	constructor() {
@@ -26,25 +26,27 @@ class LeaderBoard extends Component {
 	render () {
 		const { users } = this.props
 		const category = this.state.category[0].toUpperCase() + this.state.category.slice(1)
-		console.log(this.state.category)
 		const showLeaderBoard = (category='total', u=users) => {
 			const stats = findUsersStats(users)
 			const topUsers = statsByCategory(category, stats)
-			return topUsers.map(user => {
-				return <TopUser user={user} category={category} />
+			return topUsers.map((user, i) => {
+				return <TopUser key={i} user={user} category={category} index={i} />
 			})
 		}
 
 		return (
-			<div>
-				<h1>LeaderBoard</h1>
-				<p>Category: {category}</p>
-				<Button name='total' onClick={this.handleClick}>All</Button>
-				<Button name='sports' onClick={this.handleClick}>Sports</Button>
-				<Button name='history' onClick={this.handleClick}>History</Button>
-				<Button name='science' onClick={this.handleClick}>Science</Button>
-				<Button name='entertainment' onClick={this.handleClick}>Entertainment</Button>
-				{showLeaderBoard(this.state.category)}
+			<div className='leaderBoard'>
+				<h1><b>LeaderBoard</b></h1>
+				<h4><b>Category</b></h4>
+				<h5>{category}</h5>
+				<Button bsSize="xsmall" bsStyle="success" name='total' onClick={this.handleClick}>All</Button>
+				<Button bsSize="xsmall" bsStyle="success" name='sports' onClick={this.handleClick}>Sports</Button>
+				<Button bsSize="xsmall" bsStyle="success" name='history' onClick={this.handleClick}>History</Button>
+				<Button bsSize="xsmall" bsStyle="success" name='science' onClick={this.handleClick}>Science</Button>
+				<Button bsSize="xsmall" bsStyle="success" name='entertainment' onClick={this.handleClick}>Entertainment</Button>
+				<Well className="leaderScores">
+					{showLeaderBoard(this.state.category)}
+				</Well>
 			</div>
 		)
 	}
@@ -58,14 +60,14 @@ const mapStatetoProps = (state) => {
 
 const findUsersStats = (users) => {
 	let usersStats = []
-	users.map(user => { 
-		const total = Math.round((user.total_correct/(user.games_played * 10) * 100) || 0)
-		const entertainment = Math.round((user.entertainment_correct/user.entertainment_played) * 100) || 0
-		const sports = Math.round((user.sports_correct/user.sports_played) * 100) || 0
-		const science = Math.round((user.science_correct/user.science_played) * 100) || 0
-		const history = Math.round((user.history_correct/user.history_played) * 100) || 0
-		usersStats = usersStats.concat({ username: user.username, total, entertainment, sports, science, history })
-	})
+	for(let i=0; i < users.length; i++) {
+		const total = Math.round((users[i].total_correct/(users[i].games_played * 10) * 100) || 0)
+		const entertainment = Math.round((users[i].entertainment_correct/users[i].entertainment_played) * 100) || 0
+		const sports = Math.round((users[i].sports_correct/users[i].sports_played) * 100) || 0
+		const science = Math.round((users[i].science_correct/users[i].science_played) * 100) || 0
+		const history = Math.round((users[i].history_correct/users[i].history_played) * 100) || 0
+		usersStats = usersStats.concat({ username: users[i].username, total, entertainment, sports, science, history })
+	}
 	return usersStats
 }
 
@@ -81,6 +83,8 @@ const statsByCategory = (category, stats) => {
 			return stats.sort((a,b) => b.entertainment - a.entertainment)
 		case 'science':
 			return stats.sort((a,b) => b.science - a.science)
+		default:
+			break
 	}
 }
 

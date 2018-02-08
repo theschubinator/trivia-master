@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import UserGames from '../components/UserGames';
 import UserStats from '../components/UserStats';
+import '../styles/profile.css';
 
 const UserProfile = ({user, history}) => {
 	if(!user.loggedIn) return <Redirect to="/" />

@@ -1,0 +1,40 @@
+.leaderBoard {
+	text-align: center;
+	border: 1px solid black;
+	padding: 20px;
+	background-color: #90bcce;
+	box-shadow: 5px 10px 10px #333333;
+}
+
+.leaderBoard button {
+	margin: 4px;
+	padding: 3px;
+	box-shadow: 5px 10px 30px #333333;
+	color: black;
+}
+
+.leaderBoard button:hover {
+	background-color: yellow;
+	color: black;
+
+}
+
+div .topUser {
+	font-size: 16px;
+	border: 1px solid black;
+	margin: -10px;
+	text-align: left;
+}
+
+.user1 {
+	background-color: #efdec9;
+}
+
+.user2 {
+	background-color: #edb878;
+}
+
+.leaderScores {
+	margin-top: 20px;
+	box-shadow: 3px 5px 20px #333333;
+}
