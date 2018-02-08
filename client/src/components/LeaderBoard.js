@@ -4,6 +4,7 @@ import { loadUsers } from '../actions/users';
 import TopUser from './TopUser';
 import { Button, Well } from 'react-bootstrap';
 import { findUsersStats, statsByCategory } from '../helpers/statistics';
+import '../styles/leaderBoard.css';
 
 class LeaderBoard extends Component {
 	constructor() {
@@ -38,8 +39,10 @@ class LeaderBoard extends Component {
 		return (
 			<div className='leaderBoard'>
 				<h1><b>Leaderboard</b></h1>
-				<h4><b>Category</b></h4>
-				<h5>{category}</h5>
+				<div className="row">
+					<h4 className="col-md-4 category"><b>Category:</b></h4>
+					<p className="col-md-8 category">{category}</p>
+				</div>
 				<Button bsSize="xsmall" bsStyle="success" name='total' onClick={this.handleClick}>All</Button>
 				<Button bsSize="xsmall" bsStyle="success" name='sports' onClick={this.handleClick}>Sports</Button>
 				<Button bsSize="xsmall" bsStyle="success" name='history' onClick={this.handleClick}>History</Button>

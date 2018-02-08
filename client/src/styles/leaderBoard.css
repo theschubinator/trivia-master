@@ -16,7 +16,6 @@
 .leaderBoard button:hover {
 	background-color: yellow;
 	color: black;
-
 }
 
 div .topUser {
@@ -42,4 +41,14 @@ div .topUser {
 .leaderBoard p.leaderboardNotice {
 	margin: -10px;
 	padding-top: 5px;
+}
+
+.leaderBoard h4.category {
+	margin-left: 60px;
+}
+
+.leaderBoard p.category {
+ margin-left: -60px;
+ font-size: 18px;
+ margin-top: 8px;
 }
