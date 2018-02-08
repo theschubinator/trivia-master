@@ -60,7 +60,6 @@ export const submitGame = (game, user) => {
 		.then(response => response.json())
 		.catch(error => console.log(error))
 		.then(game => {dispatch(saveGame(game))})
-
 	}
 }
 

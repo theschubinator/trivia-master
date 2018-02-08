@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208020218) do
+ActiveRecord::Schema.define(version: 20180208031736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,11 +68,16 @@ ActiveRecord::Schema.define(version: 20180208020218) do
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "total"
-    t.integer "sports"
-    t.integer "history"
-    t.integer "entertainment"
-    t.integer "science"
+    t.integer "total_correct", default: 0
+    t.integer "sports_correct", default: 0
+    t.integer "history_correct", default: 0
+    t.integer "entertainment_correct", default: 0
+    t.integer "science_correct", default: 0
+    t.integer "games_played", default: 0
+    t.integer "history_played", default: 0
+    t.integer "science_played", default: 0
+    t.integer "entertainment_played", default: 0
+    t.integer "sports_played", default: 0
   end
 
 end
