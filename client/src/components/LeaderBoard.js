@@ -10,7 +10,7 @@ class LeaderBoard extends Component {
 	constructor() {
 		super();
 		this.state = {
-			category: 'total'
+			category: 'total',
 		}
 	}
 
@@ -26,14 +26,45 @@ class LeaderBoard extends Component {
 	}
 
 	render () {
-		const { users } = this.props
+		const { user, users } = this.props
+		let currentUserRank //set below after statsByCategory() fires...
+	
 		const category = this.state.category[0].toUpperCase() + this.state.category.slice(1)
-		const showLeaderBoard = (category='total', u=users) => {
+
+		const showLeaderBoard = (category='total', u=users, cu = user) => {
 			const stats = findUsersStats(users)
-			const topUsers = statsByCategory(category, stats).slice(0,10)
-			return topUsers.map((user, i) => {
+			const userScoresByCategory = statsByCategory(category, stats)
+			// Sets the stats of the current user if he is logged in...
+			const currentUserRankingIndex = stats.findIndex(user => user.username === cu.username)
+			currentUserRank = {...stats[currentUserRankingIndex], ranking: currentUserRankingIndex + 1 }
+			//loads the top 10 users by the selected category
+			const top10Users = userScoresByCategory.slice(0,10)
+
+			return top10Users.map((user, i) => {
 				return <TopUser key={i} user={user} category={category} index={i} />
 			})
+		}
+
+		const showCurrentUserRanking = () => {
+			if(user.loggedIn) {
+				return (
+					<Well id="currentUserRanking">
+						<div className="row">
+							<div className="col-md-12">
+								<p>Your current ranking is...</p>
+							</div>
+						</div>
+						<div className="row">
+							<div className="col-md-8 currentUserRanking">
+								<p>{currentUserRank.ranking}. {user.username}</p>
+							</div>
+							<div className="col-md-4 currentUserScore">
+								<p>{currentUserRank[this.state.category]}%</p>
+							</div>
+						</div>
+					</Well>
+				)
+			}
 		}
 
 		return (
@@ -51,6 +82,7 @@ class LeaderBoard extends Component {
 				<Well className="leaderScores">
 					{showLeaderBoard(this.state.category)}
 				</Well>
+				{ showCurrentUserRanking() }
 				<p className="leaderboardNotice">Top 10 users are shown.</p>
 			</div>
 		)
@@ -59,6 +91,7 @@ class LeaderBoard extends Component {
 
 const mapStatetoProps = (state) => {
 	return {
+		user: state.currentUser,
 		users: state.users
 	}
 }

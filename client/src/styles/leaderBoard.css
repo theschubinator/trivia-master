@@ -52,3 +52,19 @@ div .topUser {
  font-size: 18px;
  margin-top: 8px;
 }
+
+#currentUserRanking {
+	padding: 0px;
+	padding-top: 5px;
+	box-shadow: 1px 2px 30px #333333;
+}
+
+.currentUserRanking {
+	margin-left: 24px;
+	margin-top: -7px;
+}
+
+.currentUserScore {
+	margin-top: -7px;
+	margin-left: -70px;
+}
