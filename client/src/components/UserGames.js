@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import GameResults from '../components/GameResults';
+import GameResults from './GameResults';
 
 const UserGames = ({userGames, user, history}) => {
 	const gamesPlayed = userGames.length
@@ -9,12 +9,16 @@ const UserGames = ({userGames, user, history}) => {
 		return <li><GameResults game={game} history={history} /></li>
 	})
 
+	const displayGame = () => {
+		if(gamesPlayed === 0)
+			return <h4><i>You haven't played any games yet.</i></h4>
+	 else { return <ol>{ viewGame }</ol> }
+	}
+
 	return (
 		<div>
 			<h1>Games Played: { gamesPlayed }</h1>
-			<ol>
-				{ viewGame }
-			</ol>
+			{displayGame()}
 		</div>
 	)
 }

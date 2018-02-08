@@ -19,7 +19,7 @@ export const GameResults = ({game, user, history, loadQuestion, setGame}) => {
 	return (
 		<div>
 			<p>Category: {game.category}</p>
-			<p>{game.correct/10 * 100}% Correct</p>
+			<p>{game.correct/10 * 100 || 0}% Correct</p>
 			<Button onClick={handleClick}>View Game</Button>
 		</div>
 	)

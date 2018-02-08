@@ -1,7 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import userGames from '../components/userGames';
+import UserGames from '../components/UserGames';
+import UserStats from '../components/UserStats';
 
 const UserProfile = ({user, history}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
@@ -13,10 +14,10 @@ const UserProfile = ({user, history}) => {
 			</div>
 			<div className="row">
 				<div className="col-md-4">
-					<userGames history={history} />
+					<UserGames history={history} />
 				</div>
 				<div className="col-md-4">
-					<h1>Game Board</h1>
+					<UserStats />
 				</div>
 				<div className="col-md-4">
 					<h1>Leader Board</h1>
