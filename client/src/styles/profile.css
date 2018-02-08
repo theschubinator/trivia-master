@@ -38,3 +38,8 @@ div .topUser {
 	margin-top: 20px;
 	box-shadow: 3px 5px 20px #333333;
 }
+
+.leaderBoard p.leaderboardNotice {
+	margin: -10px;
+	padding-top: 5px;
+}

@@ -28,7 +28,7 @@ class LeaderBoard extends Component {
 		const category = this.state.category[0].toUpperCase() + this.state.category.slice(1)
 		const showLeaderBoard = (category='total', u=users) => {
 			const stats = findUsersStats(users)
-			const topUsers = statsByCategory(category, stats)
+			const topUsers = statsByCategory(category, stats).slice(0,10)
 			return topUsers.map((user, i) => {
 				return <TopUser key={i} user={user} category={category} index={i} />
 			})
@@ -36,7 +36,7 @@ class LeaderBoard extends Component {
 
 		return (
 			<div className='leaderBoard'>
-				<h1><b>LeaderBoard</b></h1>
+				<h1><b>Leaderboard</b></h1>
 				<h4><b>Category</b></h4>
 				<h5>{category}</h5>
 				<Button bsSize="xsmall" bsStyle="success" name='total' onClick={this.handleClick}>All</Button>
@@ -47,6 +47,7 @@ class LeaderBoard extends Component {
 				<Well className="leaderScores">
 					{showLeaderBoard(this.state.category)}
 				</Well>
+				<p className="leaderboardNotice">Top 10 users are shown.</p>
 			</div>
 		)
 	}
