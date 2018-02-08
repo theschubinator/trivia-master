@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import UserGames from '../components/UserGames';
 import UserStats from '../components/UserStats';
 import '../styles/profile.css';
+import LeaderBoard from '../components/LeaderBoard';
 
 const UserProfile = ({user, history}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
@@ -21,7 +22,7 @@ const UserProfile = ({user, history}) => {
 					<UserStats />
 				</div>
 				<div className="col-md-4">
-					<h1>Leader Board</h1>
+					<LeaderBoard />
 				</div>
 			</div>
 
