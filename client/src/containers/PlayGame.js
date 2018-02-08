@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import GameOptions from './GameOptions';
 import { questionsByCategory, randomQuestion } from '../helpers/questions';
 import GameCard from '../components/GameCard';
 import GameSubmission from '../components/GameSubmission';
@@ -11,7 +10,7 @@ import { resetBoard } from '../actions/game';
 class PlayGame extends Component {
 
 	render () {
-		const { user, game, questions, history, categories } = this.props
+		const { user, game, questions, history } = this.props
 		if(!user.loggedIn) return <Redirect to="/" />
 
 		const playGame = () => {

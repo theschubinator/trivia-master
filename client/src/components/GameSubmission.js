@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { resetBoard, submitGame, saveGame } from '../actions/game';
 import { Button } from 'react-bootstrap';
-import PlayGame from '../containers/PlayGame';
 
 class GameSubmission extends Component {
 	componentWillMount() {

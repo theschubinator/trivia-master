@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import GameResults from './GameResults';
 
 const UserGames = ({userGames, user, history}) => {
-	const gamesPlayed = userGames.length
+	const gamesPlayed = user.games.length
 	
-	const viewGame = userGames.map(game => {
+	const viewGame = user.games.map(game => {
 		return <li><GameResults game={game} history={history} /></li>
 	})
 
@@ -25,7 +25,7 @@ const UserGames = ({userGames, user, history}) => {
 
 const mapStateToProps = (state) => {
 	return {
-		userGames: state.userGames,
+		// userGames: state.userGames,
 		user: state.currentUser
 	}
 }

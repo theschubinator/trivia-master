@@ -14,7 +14,7 @@ class Api::GamesController < ApplicationController
 		game = Game.new(game_params)
 		if game.save
 			update_user_stats(game)
-			render json: game
+			render json: {game: game, user: @user}
 		else
 			render json: { error: 'Game could not be save'}
 		end
@@ -37,16 +37,16 @@ class Api::GamesController < ApplicationController
 				category = question.category.name
 				if category == 'History'
 					@user.history_played += 1
-					@user.history += 1 if game.results[i]
+					@user.history_correct += 1 if game.results[i].correct
 				elsif category == 'Science'
 					@user.science_played += 1
-					@user.science += 1 if game.results[i]
+					@user.science_correct += 1 if game.results[i].correct
 				elsif category == 'Entertainment'
 					@user.entertainment_played += 1
-					@user.entertainment += 1 if game.results[i]
+					@user.entertainment_correct += 1 if game.results[i].correct
 				elsif category == 'Sports'
 					@user.sports_played += 1
-					@user.sports += 1 if game.results[i]
+					@user.sports_correct += 1 if game.results[i].correct
 				end
 			end
 			@user.save

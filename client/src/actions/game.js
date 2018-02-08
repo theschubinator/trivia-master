@@ -21,10 +21,32 @@ export const resetBoard = () => {
 }
 
 export const saveGame = (game) => {
+	const gameData = {
+		id: game.game.id,
+		category: game.game.category,
+		correct: game.game.correct
+	}
+	
+	const userData = {	
+		id: game.user.id,
+		username: game.user.username,
+		email: game.user.email,
+		admin: game.user.admin,
+		games_played: game.user.games_played,
+		total_correct: game.user.total_correct,
+		entertainment_correct: game.user.entertainment_correct,
+		entertainment_played: game.user.entertainment_played,
+		history_correct: game.user.history_correct,
+		history_played: game.user.history_played,
+		science_correct: game.user.science_correct,
+		science_played: game.user.science_played,
+		sports_correct: game.user.sports_correct,
+		sports_played: game.user.sports_played
+	}
 
 	return {
 		type: 'SAVE_GAME',
-		payload: game
+		payload: {game: gameData, user: userData}
 	}
 }
 

@@ -25,9 +25,9 @@ export const GameResults = ({game, user, history, loadQuestion, setGame}) => {
 	)
 }
 
-const sameCategories = (categories) => {
-	return categories.every(name => name === categories[0])
-}
+// const sameCategories = (categories) => {
+// 	return categories.every(name => name === categories[0])
+// }
 
 const mapStateToProps = (state) => {
 	return {

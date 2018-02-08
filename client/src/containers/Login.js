@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateForm, submitForm, resetFormData, grabErrors } from '../actions/userForm';
 import { login, loadUser, loadUserGames } from '../actions/users';
-import { Redirect } from 'react-router-dom';
 import '../styles/form.css';
 
 import { Button } from 'react-bootstrap';
