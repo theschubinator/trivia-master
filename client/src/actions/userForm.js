@@ -19,6 +19,13 @@ export const grabErrors = (errors) => {
 	};
 }
 
+const updateQuestions = (question) => {
+	return {
+		type: 'UPDATE_QUESTIONS',
+		payload: question
+	}
+}
+
 // ** ASYNC Actions
 export const submitForm = (formData) => {
 	return dispatch => {
@@ -45,6 +52,6 @@ export const submitQuestionForm = (formData) => {
 		})
 		.catch(error => console.log(error))
 		.then(response => response.json())
-		.then(question => {debugger})
+		.then(question => {dispatch(updateQuestions(question))})
 	}
 }
