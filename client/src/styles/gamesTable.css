@@ -1,0 +1,50 @@
+#oldGamesBoard {
+	background-color: #90bcce;
+	padding: 15px;
+	margin-left: -300px;
+	box-shadow: 5px 10px 10px #333333;
+	width: 400px;
+}
+
+#oldGamesBoard h1 {
+	text-align: center;
+	margin: 0px 0px 10px 0px;
+}
+
+#oldGames {
+	border: 5px solid white;
+	box-shadow: 2px 4px 10px #333333;
+	overflow: scroll;
+	height: 565px;
+}
+
+#oldGamesBoard .gameHistory {
+	border: 1px solid black;
+	padding-top: 10px;
+	margin: 0;
+}
+
+.game1 {
+	background-color: #efdec9;
+}
+
+.game2 {
+	background-color: #edb878;
+}
+
+.gameCategory {
+	margin-right: -100px;
+	margin-left: -8px;
+}
+
+.gameResults {
+	margin-right: -20px;
+	margin-left: 30px;
+	padding: 0;
+}
+
+#oldGamesBoard .gameHistory .viewGameBtn {
+	margin-left: 10px;
+	margin-top: -5px;
+	box-shadow: 1px 2px 8px #333333;
+}

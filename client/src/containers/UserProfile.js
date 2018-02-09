@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import UserGames from '../components/UserGames';
 import UserStats from '../components/UserStats';
-// import '../styles/profile.css';
 import LeaderBoard from '../components/LeaderBoard';
 
 const UserProfile = ({user, history}) => {

@@ -2,8 +2,10 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { loadQuestion, setGame } from '../actions/game';
+import '../styles/gamesTable.css';
 
-export const GameResults = ({game, user, history, loadQuestion, setGame}) => {
+export const GameResults = ({game, user, history, index, loadQuestion, setGame}) => {
+	
 	const handleClick = () => {
 		loadQuestion(`/users/${user.id}/games/${game.id}`)
 		.then(game => { setGame(game)
@@ -15,12 +17,18 @@ export const GameResults = ({game, user, history, loadQuestion, setGame}) => {
 		})
 		
 	}
-
+	
 	return (
 		<div>
-			<p>Category: {game.category}</p>
-			<p>{game.correct/10 * 100 || 0}% Correct</p>
-			<Button onClick={handleClick}>View Game</Button>
+			<div className="col-sm-4">
+				<p className="gameCategory">Category: {game.category}</p>
+			</div>
+			<div className="col-sm-4">
+				<p className="gameResults">{game.correct/10 * 100 || 0}% Correct</p>
+			</div>
+			<div className="col-sm-4">
+				<Button className="viewGameBtn" bsStyle="danger" bsSize="xsmall" onClick={handleClick}>View Game</Button>
+			</div>
 		</div>
 	)
 }

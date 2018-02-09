@@ -79,11 +79,11 @@ class LeaderBoard extends Component {
 				<Button bsSize="xsmall" bsStyle="success" name='history' onClick={this.handleClick}>History</Button>
 				<Button bsSize="xsmall" bsStyle="success" name='science' onClick={this.handleClick}>Science</Button>
 				<Button bsSize="xsmall" bsStyle="success" name='entertainment' onClick={this.handleClick}>Entertainment</Button>
+				<p className="leaderboardNotice">Top 10 users are shown.</p>
 				<Well className="leaderScores">
 					{showLeaderBoard(this.state.category)}
 				</Well>
 				{ showCurrentUserRanking() }
-				<p className="leaderboardNotice">Top 10 users are shown.</p>
 			</div>
 		)
 	}
