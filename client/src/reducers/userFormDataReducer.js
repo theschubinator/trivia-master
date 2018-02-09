@@ -1,8 +1,8 @@
 const initialState = {
-	username: '',
-	email: '',
-	password: '',
-	password_confirmation: '',
+	// username: '',
+	// email: '',
+	// password: '',
+	// password_confirmation: '',
 };
 
 export const userFormDataReducer = (state=initialState, action) => {

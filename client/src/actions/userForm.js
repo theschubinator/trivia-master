@@ -33,3 +33,18 @@ export const submitForm = (formData) => {
 			.then(response => response.json())
 	}
 }
+
+export const submitQuestionForm = (formData) => {
+	return dispatch => {
+		return fetch('/api/questions', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({formData: formData})
+		})
+		.catch(error => console.log(error))
+		.then(response => response.json())
+		.then(question => {debugger})
+	}
+}

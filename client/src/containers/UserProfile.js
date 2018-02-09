@@ -10,7 +10,7 @@ const UserProfile = ({user, history}) => {
 
 	return (
 		<div className="row">
-			<div className="col-md-10">
+			<div className="col-md-12">
 				<h1>{user.username}</h1>
 			</div>
 			<div className="row">
@@ -18,7 +18,14 @@ const UserProfile = ({user, history}) => {
 					<UserGames history={history} />
 				</div>
 				<div className="col-md-4">
-					<UserStats />
+					<div className="row">
+						<div className="col-md-12">
+							<UserStats />
+						</div>
+					</div>
+					<div className="col-md-12">
+							<h1>User Questions Here</h1>
+					</div>
 				</div>
 				<div className="col-md-4">
 					<LeaderBoard />
