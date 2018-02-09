@@ -21,10 +21,10 @@ export const GameResults = ({game, user, history, index, loadQuestion, setGame})
 	return (
 		<div>
 			<div className="col-sm-4">
-				<p className="gameCategory">Category: {game.category}</p>
+				<p className="gameCategory">{game.category}</p>
 			</div>
 			<div className="col-sm-4">
-				<p className="gameResults">{game.correct/10 * 100 || 0}% Correct</p>
+				<p className="gameResults">{game.correct/10 * 100 || 0}%</p>
 			</div>
 			<div className="col-sm-4">
 				<Button className="viewGameBtn" bsStyle="danger" bsSize="xsmall" onClick={handleClick}>View Game</Button>

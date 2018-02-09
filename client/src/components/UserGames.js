@@ -20,6 +20,14 @@ const UserGames = ({userGames, user, history}) => {
 	return (
 		<div id="oldGamesBoard">
 			<h1>Games Played: { gamesPlayed }</h1>
+			<div className="row">
+        <div id="categoryHeader" className="col-md-6">
+        	<p><b>Category</b></p>
+        </div>
+        <div id="resultsHeader" className="col-md-6">
+        	<p><b>Results</b></p>
+        </div>
+      </div>
 			<div>
 				{displayGame()}
 			</div>
