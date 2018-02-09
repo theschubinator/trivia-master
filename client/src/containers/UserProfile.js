@@ -18,14 +18,7 @@ const UserProfile = ({user, history}) => {
 					<UserGames history={history} />
 				</div>
 				<div className="col-md-4">
-					<div className="row">
-						<div className="col-md-12">
-							<UserStats />
-						</div>
-					</div>
-					<div className="col-md-12">
-							<h1>User Questions Here</h1>
-					</div>
+					<UserStats />
 				</div>
 				<div className="col-md-4">
 					<LeaderBoard />
