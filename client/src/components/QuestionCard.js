@@ -1,9 +1,16 @@
 import React from 'react';
+import { deleteQuestion } from '../actions/questions';
 import '../styles/questions.css';
+import { connect } from 'react-redux';
 
-export const QuestionCard = ({ question }) => {
+const QuestionCard = ({ question, deleteQuestion }) => {
+	const handleClick = (e) => {
+		deleteQuestion(e.target.name)
+	}
+
 	return (
-		<div className="questionCard">
+		<div className="questionCard" id={`question_${question.id}`}>
+			<button name={question.id} className="delete" onClick={handleClick}>X</button>
 			<h3>{question.question}</h3>
 			<div className="row">
 				<div className="col-md-6">
@@ -22,3 +29,5 @@ export const QuestionCard = ({ question }) => {
 		</div>
 	)
 }
+
+export default connect(null, { deleteQuestion})(QuestionCard);

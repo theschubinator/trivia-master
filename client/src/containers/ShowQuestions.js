@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { QuestionCard } from '../components/QuestionCard';
+import QuestionCard from '../components/QuestionCard';
 
 const showQuestions = (props) => {
 	if(!props.user.loggedIn) return <Redirect to="/" />
