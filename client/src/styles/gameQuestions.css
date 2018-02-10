@@ -4,7 +4,7 @@
 	padding: 10px;
 	background-color: #1c99b2;
 	box-shadow: 5px 10px #333333;
-	height: 360px;
+	height: 380px;
 }
 
 .gameCard h2 {
@@ -28,4 +28,9 @@
 
 .gameCard p:hover {
 	background-color: yellow;
+}
+
+.gameCard .createdByUser {
+	margin-left: -200px;
+	margin-right: 180px;
 }
