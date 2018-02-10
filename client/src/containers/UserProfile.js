@@ -4,9 +4,13 @@ import { connect } from 'react-redux';
 import UserGames from '../components/UserGames';
 import UserStats from '../components/UserStats';
 import LeaderBoard from '../components/LeaderBoard';
+import { Button } from 'react-bootstrap';
 
 const UserProfile = ({user, history}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
+	const handleClick = () => {
+		history.push(`/users/${user.id}/edit`)
+	}
 
 	return (
 		<div className="row">
