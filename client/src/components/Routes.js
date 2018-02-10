@@ -9,6 +9,7 @@ import ShowQuestions from '../containers/ShowQuestions';
 import ShowGame from '../components/ShowGame';
 import { Home } from '../components/Home';
 import NewQuestion from '../containers/NewQuestion';
+import EditQuestion from '../containers/EditQuestion';
 
 export const Routes = () => {
 	return (
@@ -21,6 +22,7 @@ export const Routes = () => {
 			<Route exact path='/users/:id' component={UserProfile} />
 			<Route exact path='/questions' component={ShowQuestions} />
 			<Route exact path='/questions/new' component={NewQuestion} />
+			<Route exact path='/questions/:id/edit' component={EditQuestion} />
 			<Route exact path='/users/:id/games/:game_id' component={ShowGame} />
 		</div>
 	)

@@ -1,5 +1,5 @@
 class Api::QuestionsController < ApplicationController
-	before_action :find_question, only: [:destroy]
+	before_action :find_question, only: [:update, :destroy]
 	def index
 		@questions = Question.all
 		render json: @questions
@@ -11,6 +11,14 @@ class Api::QuestionsController < ApplicationController
 			render json: question
 		else
 			render json: {error: 'Question could not be save'}
+		end
+	end
+
+	def update
+		if @question.update(question_params)
+			render json: @question
+		else
+			render json: {message: 'Question cannot be updated'}
 		end
 	end
 

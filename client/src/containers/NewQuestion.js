@@ -11,7 +11,6 @@ const NewQuestion = ({formData, user, updateForm, submitQuestionForm}) => {
 
 	const handleChange = (e) => {
 		const { name, value } = e.target
-		console.log(user)
 		const newFormData = Object.assign({}, formData, {[name]: value}, {user_id: user.id})
 		updateForm(newFormData)
 	}
