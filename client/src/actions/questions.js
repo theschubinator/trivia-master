@@ -21,7 +21,6 @@ const removeQuestion = (question_id) => {
 }
 
 export const editQuestion = (question, username) => {
-	const questionData = {...question, username}
 	return {
 		type: 'UPDATE_QUESTION',
 		payload: question

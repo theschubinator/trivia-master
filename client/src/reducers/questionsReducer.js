@@ -9,7 +9,7 @@ export const questionsReducer = (state=[], action) => {
 			state[index] = action.payload
 			return state
 		case 'DELETE_QUESTION':
-			return state.filter(question => question.id !== parseInt(action.payload))
+			return state.filter(question => question.id !== parseInt(action.payload, 10))
 		default:
 		 return state
 	}

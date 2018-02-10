@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import { setFormData, updateForm } from '../actions/userForm';
 import { updateQuestion, editQuestion } from '../actions/questions';
+import { Redirect } from 'react-router-dom';
 
 class EditQuestion extends Component {
 	componentDidMount() {
-		const question_id = parseInt(this.props.match.params.id)
+		const question_id = parseInt(this.props.match.params.id, 10)
 		const question = this.props.questions.find(question => question.id === question_id);
 		this.props.setFormData(question);
 	}
@@ -14,7 +15,7 @@ class EditQuestion extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		const question_id = parseInt(this.props.match.params.id)
+		const question_id = parseInt(this.props.match.params.id, 10)
 		this.props.updateQuestion(this.props.formData, question_id, this.props.history)
 		.then(question => {this.props.editQuestion(question, this.props.formData.username)
 			this.props.history.push('/questions')}
@@ -28,7 +29,8 @@ class EditQuestion extends Component {
 	}
 
 	render() {
-		const { formData } = this.props
+		const { formData, user } = this.props
+		if(!user.loggedIn) return <Redirect to="/" />
 		return (
 			<div id="questionForm">
 				<form onSubmit={this.handleSubmit}>

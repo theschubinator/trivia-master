@@ -36,7 +36,6 @@ const UserGames = ({userGames, user, history}) => {
 }
 const mapStateToProps = (state) => {
 	return {
-		// userGames: state.userGames,
 		user: state.currentUser
 	}
 }

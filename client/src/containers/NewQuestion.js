@@ -2,8 +2,11 @@ import React from 'react'
 import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { updateForm, submitQuestionForm } from '../actions/userForm';
+import { Redirect } from 'react-router-dom';
 
 const NewQuestion = ({formData, user, updateForm, submitQuestionForm}) => {
+	if(!user.loggedIn) return <Redirect to="/" />
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		submitQuestionForm(formData);
