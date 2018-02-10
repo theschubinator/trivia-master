@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const QuestionCard = ({ question, deleteQuestion }) => {
+	
 	const handleClick = (e) => {
 		deleteQuestion(e.target.name)
 	}

@@ -73,6 +73,5 @@ export const updateQuestion = (formData, question_id) => {
 		})
 		.then(response => response.json())
 		.catch(error => console.log(error))
-		// .then(question => dispatch(editQuestion(question, formData.username)))
 	}
 }

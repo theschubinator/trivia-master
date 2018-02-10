@@ -14,7 +14,7 @@ const UserGames = ({userGames, user, history}) => {
 
 	const viewGame = user.games.map((game, i) => {
 		const cssClass = i % 2 === 0 ? 'game1' : 'game2'
-		return <p className={`row gameHistory ${cssClass}`}><GameResults game={game} index={i} history={history} /></p>
+		return <h5 key={i} className={`row gameHistory ${cssClass}`}><GameResults game={game} index={i} history={history} /></h5>
 	})
 
 	return (

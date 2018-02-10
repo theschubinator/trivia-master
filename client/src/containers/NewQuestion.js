@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import { updateForm, submitQuestionForm } from '../actions/userForm';
 import { Redirect } from 'react-router-dom';
 
-const NewQuestion = ({formData, user, updateForm, submitQuestionForm}) => {
+const NewQuestion = ({formData, user, updateForm, submitQuestionForm, history}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		submitQuestionForm(formData);
+		submitQuestionForm(formData)
+		.then(() => history.push('/questions') )
 	}
 
 	const handleChange = (e) => {

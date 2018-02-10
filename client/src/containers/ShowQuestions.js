@@ -15,9 +15,9 @@ const showQuestions = ({user, questions}) => {
 		}
 	};
 
-	const displayQuestions = permittedQuestions().map(question => {
+	const displayQuestions = permittedQuestions().map((question, i) => {
 		return (
-			<div className="col-md-6">
+			<div className="col-md-6" key={i}>
 				<QuestionCard question={question} />
 			</div>
 		)

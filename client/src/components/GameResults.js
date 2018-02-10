@@ -33,10 +33,6 @@ export const GameResults = ({game, user, history, index, loadQuestion, setGame})
 	)
 }
 
-// const sameCategories = (categories) => {
-// 	return categories.every(name => name === categories[0])
-// }
-
 const mapStateToProps = (state) => {
 	return {
 		user: state.currentUser,

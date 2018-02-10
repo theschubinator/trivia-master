@@ -6,15 +6,16 @@ import { OldGameQuestionCard } from './OldGameQuestionCard';
 
 const ShowGame = ({user, oldGame}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
-		const showGameQuestions = oldGame.questions.map(question => {
-			return <OldGameQuestionCard question={question} />
-		})
+		
+	const showGameQuestions = oldGame.questions.map((question, i) => {
+		return <OldGameQuestionCard key={i} question={question} />
+	})
 
-		return (
-			<div>
-				{showGameQuestions}
-			</div>
-		)
+	return (
+		<div>
+			{showGameQuestions}
+		</div>
+	)
 }
 
 const mapStateToProps = (state) => {
