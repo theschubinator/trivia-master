@@ -1,5 +1,5 @@
 # Admin User
-user = User.create(username: 'theschubinator', email: 'andrew.schubert1986@gmail.com', password:'youthguy09')
+user = User.create(username: 'theschubinator', email: 'andrew.schubert1986@gmail.com', password:'admin')
 
 # Categories
 sports = Category.create(name: 'Sports')
