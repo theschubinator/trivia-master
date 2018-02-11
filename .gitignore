@@ -12,5 +12,5 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+/db/seeds
 .byebug_history
