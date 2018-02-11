@@ -2,7 +2,6 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
 import { currentUserReducer } from './reducers/currentUserReducer';
-import { userFormDataReducer } from './reducers/userFormDataReducer';
 import { questionsReducer } from './reducers/questionsReducer';
 import { gameReducer } from './reducers/gameReducer';
 import { categoriesReducer } from './reducers/categoriesReducer';
@@ -12,7 +11,6 @@ import { usersReducer } from './reducers/usersReducer';
 const reducers = combineReducers({
 	currentUser: currentUserReducer,
 	users: usersReducer,
-	formData: userFormDataReducer,
 	questions: questionsReducer,
 	oldGame: userGameReducer,
 	categories: categoriesReducer,
