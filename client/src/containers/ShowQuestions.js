@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import QuestionCard from '../components/QuestionCard';
+import { Button } from 'react-bootstrap';
 
 const showQuestions = ({user, questions}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
@@ -22,9 +23,18 @@ const showQuestions = ({user, questions}) => {
 			</div>
 		)
 	})
+	
+	const handleClick = (e) => {
+		alert(e.target.name)
+	}
 
 	return (
 		<div className="row">
+		<Button name="All" onClick={handleClick}>All</Button>
+		<Button name="Sports" onClick={handleClick}>Sports</Button>	
+		<Button name="History" onClick={handleClick}>History</Button>
+		<Button name="Science" onClick={handleClick}>Science</Button>
+		<Button name="Entertainment" onClick={handleClick}>Entertainment</Button>
 			<p id="questionNote"><b>Note: </b><i>Green signifies the correct answer.</i></p>
 			{displayQuestions}
 		</div>
