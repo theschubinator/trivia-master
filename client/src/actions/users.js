@@ -63,3 +63,17 @@ export const loadUsers = () => {
 		.then(users => dispatch(getUsers(users)))
 	}
 }
+
+export const signUpUser = (formData) => {
+	return dispatch => {
+		return fetch('/api/users', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ user: formData })
+		})
+			.catch(error => console.log(error))
+			.then(response => response.json())
+	}
+}
