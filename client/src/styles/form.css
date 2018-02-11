@@ -26,3 +26,32 @@ form div input {
 .submitButton {
 	background-color: #1c99b2;
 }
+
+#questionForm {
+	margin: 30px 0 0 0;
+	border: 1px solid black;
+	padding: 20px;
+	font-size: 22px;
+	box-shadow: 1px 2px 8px #333333;
+}
+
+#questionForm .inputField {
+	width: 100%;
+	height: 50px;
+	background-color: #f4f4f4;
+	margin-bottom: 20px;
+}
+
+#questionForm .inputField:focus {	
+	background-color: #f2e718;
+}
+
+#createByCategory {
+	text-align: center
+}
+
+#questionForm select {
+	width: 70%;
+	height: 40px;
+	margin: 10px 0 10px 0;
+}

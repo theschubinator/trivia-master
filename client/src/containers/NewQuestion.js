@@ -24,7 +24,7 @@ const NewQuestion = ({formData, user, updateForm, submitQuestionForm, history}) 
 			<form onSubmit={handleSubmit}>
 				<div id="createQuestion">
 					<label>Question</label><br/>
-					<input type="text" name="question" onChange={handleChange} />
+					<input type="text" className="inputField" name="question" onChange={handleChange} />
 				</div>
 				<div id="createByCategory">
 					<label>Choose a Category</label><br />
@@ -38,22 +38,22 @@ const NewQuestion = ({formData, user, updateForm, submitQuestionForm, history}) 
 				</div>
 				<div id="createAnswer">
 					<label>Answer</label><br/>
-					<input type="text" name="answer" onChange={handleChange} />
+					<input type="text" className="inputField" name="answer" onChange={handleChange} />
 				</div>
 				<div className="createIncorrectChoice">
 					<label>Incorrect Choice #1</label><br/>
-					<input type="text" name="incorrect1" onChange={handleChange} />
+					<input type="text" className="inputField" name="incorrect1" onChange={handleChange} />
 				</div>
 				<div className="createIncorrectChoice">
 					<label>Incorrect Choice #2</label><br/>
-					<input type="text" name="incorrect2" onChange={handleChange} />
+					<input type="text" className="inputField" name="incorrect2" onChange={handleChange} />
 				</div>
 				<div className="createIncorrectChoice">
 					<label>Incorrect Choice #3</label><br/>
-					<input type="text" name="incorrect3" onChange={handleChange} />
+					<input type="text" className="inputField" name="incorrect3" onChange={handleChange} />
 				</div>
 
-				<Button bsStyle="info" type="submit">Create Question</Button>
+				<Button bsStyle="info" bsSize="large" type="submit" block>Create Question</Button>
 			</form>
 		</div>
 	)
