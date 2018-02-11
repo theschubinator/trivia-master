@@ -21,21 +21,21 @@ const NavBar = (props) => {
 	if(props.user.loggedIn) {
 		return (
 			<div id='header'>
-				<NavLink id="homeLink" style={styles} to="/">Trivia Master</NavLink>
-				<NavLink className="NavLink" style={styles} to={`/users/${props.user.id}`}>Profile</NavLink>
-				<NavLink className="NavLink" style={styles} to="/questions">View Questions</NavLink>
-				<NavLink className="NavLink" style={styles} to="/questions/new">New Question</NavLink>
-				<NavLink className="NavLink" style={styles} to="/newgame">New Game</NavLink>
-				<NavLink className="NavLink" to="#" style={{...styles, ...{float: 'right', marginRight: '20px'}}} onClick={ handleSignOut }>Log Out</NavLink>
+				<NavLink id="homeLink" style={{...styles, ...{marginLeft: '10px', fontSize: '20px'}}} to="/">Trivia Master</NavLink>
+				<NavLink className="NavLink newGame" style={styles} to="/newgame">New Game</NavLink>
+				<NavLink className="NavLink showQuestions" style={styles} to="/questions">View Questions</NavLink>
+				<NavLink className="NavLink newQuestion" style={styles} to="/questions/new">Create Question</NavLink>
+				<NavLink className="NavLink logOut" to="#" style={{...styles, ...{float: 'right', marginRight: '20px'}}} onClick={ handleSignOut }>Log Out</NavLink>
+				<NavLink className="NavLink username" style={{...styles, ...{float: 'right'}}} to={`/users/${props.user.id}`}>{props.user.username}</NavLink>
 			</div>
 		)
 	} 
 	else {
 		return (
 			<div id='header'>
-				<NavLink style={{...styles, ...{fontSize:'30px', padding: '5px'}}} to="/">Trivia Master</NavLink>
-				<NavLink className="NavLink" style={styles} to="/login">Login</NavLink>
-				<NavLink className="NavLink" style={styles} to="/signup">Sign Up</NavLink>
+				<NavLink id="homeLink" style={{...styles, ...{marginLeft: '10px', fontSize: '20px'}}} to="/">Trivia Master</NavLink>
+				<NavLink className="NavLink Login" style={styles} to="/login">Login</NavLink>
+				<NavLink className="NavLink SignUp" style={styles} to="/signup">Sign Up</NavLink>
 			</div>
 		)
 	}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import QuestionCard from '../components/QuestionCard';
 import { Button } from 'react-bootstrap';
@@ -42,6 +42,13 @@ class ShowQuestions extends Component {
 			)
 		})
 
+		const displayNoQuestionAlert = (
+			<div id="NoQuestionsAlert">
+				<h1>You have not yet created any questions!</h1>
+				<p>Click <Link to="/questions/new">here</Link> to create your first question!</p>
+			</div>
+		)
+
 		return (
 			<div className="row" id="showQuestions">
 				<div className="col-md-8">
@@ -56,7 +63,7 @@ class ShowQuestions extends Component {
 					<p id="questionNote"><b>Note: </b><i>Green signifies the correct answer.</i></p>
 				</div>
 				<div>
-					{displayQuestions}
+					{(displayQuestions.length > 0) ? displayQuestions : displayNoQuestionAlert}
 				</div>
 			</div>
 		)

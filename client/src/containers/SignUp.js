@@ -35,7 +35,7 @@ class SignUp extends Component {
 	}
 
 	passwordsExist = () => {
-	if (this.props.formData.password !== "" || this.props.formData.password_confirmation !== "")
+	if (this.state.password !== "" || this.state.password_confirmation !== "")
 		return true;
 	else 
 		this.props.grabErrors({errors:['Password fields cannot be blank']})
@@ -46,26 +46,26 @@ class SignUp extends Component {
 	
 	render () {
 		const showErrors = () => { return this.state.errors.map((error, i) => <p id={`error_${i+1}`}>{error}</p>) };
-		console.log(this.state)
+
 		return (
 			<div className="row">
 				<div className="col-md-12 loginForm">
 					<form onSubmit={this.handleSubmit}>
-						<div className="username">
+						<div>
 							<label>Username</label><br/>
-							<input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+							<input type="text" clasName="inputField" name="username" value={this.state.username} onChange={this.handleChange} />
 						</div>
 						<div className="email">
 							<label>Email</label><br/>
-							<input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
+							<input type="text" className="inputField" name="email" value={this.state.email} onChange={this.handleChange} />
 						</div>
 						<div className="password">
 							<label>Password</label><br/>
-							<input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+							<input type="password" className="inputField" name="password" value={this.state.password} onChange={this.handleChange} />
 						</div>
 						<div className="passwordConfirmation">
 							<label>Password Confirmation</label><br/>
-							<input type="password" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange} />
+							<input type="password" className="inputField" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange} />
 						</div>
 						<div>
 							<Button bsStyle="info" type="submit">Sign Up</Button>

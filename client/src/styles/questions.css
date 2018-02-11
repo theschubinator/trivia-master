@@ -82,3 +82,13 @@
 	color: black;
 }
 
+#NoQuestionsAlert {
+	margin-top: 100px;
+	text-align: center;
+	color: red;
+}
+
+#NoQuestionsAlert p {
+	color: black;
+	font-size: 18px;
+}

@@ -1,5 +1,5 @@
-.inputField {
-	float: left;
+.inputField:focus {
+	background-color: #f2e718;
 }
 
 .loginForm {
