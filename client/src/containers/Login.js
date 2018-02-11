@@ -1,30 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateForm, submitForm, resetFormData, grabErrors } from '../actions/userForm';
 import { login, loadUser, loadUserGames } from '../actions/users';
 import '../styles/form.css';
 
 import { Button } from 'react-bootstrap';
 
 class Login extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			username: '',
+			password: '',
+			error: ''
+		}
+	};
+
 	handleChange = (e) => {
 		const { name, value } = e.target;
-		const formData = Object.assign({}, this.props.formData, { [name]: value });
-		this.props.updateForm(formData);
+		this.setState({ [name]: value})
 	}
 
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		this.props.login(this.props.formData)
+		this.props.login(this.state)
 		.then(user => {
 			if(!user.error) {
 				this.props.loadUser(user);
 				this.props.loadUserGames(user.id);
-				this.props.resetFormData();
 				//Redirect to Profile Page!
 				this.props.history.push(`/users/${this.props.user.id}`);
-			} else { this.props.grabErrors(user) }
+			} else { this.setState({ error: user.error}) }
 		});
 	}
 
@@ -49,7 +55,7 @@ class Login extends Component {
 								<Button bsStyle="info" type="submit">Login</Button>
 							</div>
 							<div className="errors">
-								{user.error}
+								{this.state.error}
 							</div>
 					</form>
 				</div>
@@ -66,4 +72,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {updateForm, submitForm, resetFormData, login, loadUser, grabErrors, loadUserGames })(Login);
+export default connect(mapStateToProps, { login, loadUser, loadUserGames })(Login);
