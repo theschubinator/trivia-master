@@ -43,14 +43,21 @@ class ShowQuestions extends Component {
 		})
 
 		return (
-			<div className="row">
-			<Button name="All" onClick={this.handleClick}>All</Button>
-			<Button name="Sports" onClick={this.handleClick}>Sports</Button>	
-			<Button name="History" onClick={this.handleClick}>History</Button>
-			<Button name="Science" onClick={this.handleClick}>Science</Button>
-			<Button name="Entertainment" onClick={this.handleClick}>Entertainment</Button>
-				<p id="questionNote"><b>Note: </b><i>Green signifies the correct answer.</i></p>
-				{displayQuestions}
+			<div className="row" id="showQuestions">
+				<div className="col-md-8">
+					<Button bsStyle="success" className="sortCategoriesBtn" name="All" onClick={this.handleClick}>All</Button>
+					<Button bsStyle="success" className="sortCategoriesBtn" name="Sports" onClick={this.handleClick}>Sports</Button>	
+					<Button bsStyle="success" className="sortCategoriesBtn" name="History" onClick={this.handleClick}>History</Button>
+					<Button bsStyle="success" className="sortCategoriesBtn" name="Science" onClick={this.handleClick}>Science</Button>
+					<Button bsStyle="success" className="sortCategoriesBtn" name="Entertainment" onClick={this.handleClick}>Entertainment</Button>
+				</div>
+
+				<div className="col-md4">
+					<p id="questionNote"><b>Note: </b><i>Green signifies the correct answer.</i></p>
+				</div>
+				<div>
+					{displayQuestions}
+				</div>
 			</div>
 		)
 	}
