@@ -5,7 +5,6 @@ import { questionsByCategory, randomQuestion } from '../helpers/questions';
 import GameCard from '../components/GameCard';
 import GameSubmission from '../components/GameSubmission';
 import { GameBoard } from '../components/GameBoard';
-import { resetBoard } from '../actions/game';
 
 class PlayGame extends Component {
 	render () {
@@ -42,4 +41,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, { resetBoard })(PlayGame);
+export default connect(mapStateToProps)(PlayGame);

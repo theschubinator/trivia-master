@@ -44,15 +44,6 @@ export const loadQuestions = () => {
 	}
 }
 
-export const loadCategories = () => {
-	return dispatch => {
-		return fetch('/api/categories')
-		.then(response => response.json())
-		.catch(error => console.log(error))
-		.then(categories => dispatch(setCategories(categories)))
-	}
-}
-
 export const deleteQuestion = (question_id) => {
 	return dispatch => {
 		return fetch(`api/questions/${question_id}`, {

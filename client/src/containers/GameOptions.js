@@ -2,7 +2,6 @@ import React from 'react';
 import { setGameCategory } from '../actions/game';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { resetBoard } from '../actions/game';
 import { Button } from 'react-bootstrap';
 import '../styles/game.css';
 
@@ -34,4 +33,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {setGameCategory, resetBoard})(GameOptions);
+export default connect(mapStateToProps, { setGameCategory })(GameOptions);

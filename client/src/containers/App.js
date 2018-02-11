@@ -4,12 +4,11 @@ import NavBar from '../components/NavBar';
 import { Routes } from '../components/Routes';
 import { connect } from 'react-redux';
 
-import { loadQuestions, loadCategories } from '../actions/questions';
+import { loadQuestions } from '../actions/questions';
 
 class App extends Component {
   componentDidMount() {
     this.props.loadQuestions()
-    this.props.loadCategories()
   }
 
   render() {
@@ -24,5 +23,5 @@ class App extends Component {
   }
 }
 
-export default connect(null, {loadQuestions, loadCategories})(App);
+export default connect(null, {loadQuestions })(App);
 

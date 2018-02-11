@@ -4,7 +4,6 @@ import thunk from 'redux-thunk';
 import { currentUserReducer } from './reducers/currentUserReducer';
 import { questionsReducer } from './reducers/questionsReducer';
 import { gameReducer } from './reducers/gameReducer';
-import { categoriesReducer } from './reducers/categoriesReducer';
 import { userGameReducer } from './reducers/userGameReducer';
 import { usersReducer } from './reducers/usersReducer';
 
@@ -13,7 +12,6 @@ const reducers = combineReducers({
 	users: usersReducer,
 	questions: questionsReducer,
 	oldGame: userGameReducer,
-	categories: categoriesReducer,
 	game: gameReducer
 })
 

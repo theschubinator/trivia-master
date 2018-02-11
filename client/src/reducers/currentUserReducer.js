@@ -25,8 +25,6 @@ export const currentUserReducer = (state=defaultState, action) => {
 			return {...state, games: [...action.payload]}
 		case 'SAVE_GAME':
 			return {...state, ...action.payload.user, games: state.games.concat(action.payload.game)}
-		case 'SHOW_ERRORS':
-			return action.payload
 		case 'SIGN_OUT':
 			return defaultState
 		default:
