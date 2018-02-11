@@ -38,7 +38,7 @@ class SignUp extends Component {
 	if (this.state.password !== "" || this.state.password_confirmation !== "")
 		return true;
 	else 
-		this.props.grabErrors({errors:['Password fields cannot be blank']})
+		this.setState({errors:['Password fields cannot be blank']})
 		return false;
 	}
 
@@ -49,7 +49,7 @@ class SignUp extends Component {
 
 		return (
 			<div className="row">
-				<div className="col-md-12 loginForm">
+				<div className="col-md-5 loginForm signUp">
 					<form onSubmit={this.handleSubmit}>
 						<div>
 							<label>Username</label><br/>
@@ -68,7 +68,7 @@ class SignUp extends Component {
 							<input type="password" className="inputField" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange} />
 						</div>
 						<div>
-							<Button bsStyle="info" type="submit">Sign Up</Button>
+							<Button bsStyle="success" className="submitBtn" type="submit">Sign Up</Button>
 						</div>
 						<div className="errors">
 							{showErrors()}

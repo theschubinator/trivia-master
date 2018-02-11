@@ -36,7 +36,7 @@ class Login extends Component {
 	render () {
 		return (
 			<div className="row">
-				<div className="col-md-12 loginForm">
+				<div className="col-md-6 loginForm">
 					<form onSubmit={this.handleSubmit}>
 							<div className="username">
 								<label>Username:&nbsp;</label>
@@ -49,7 +49,7 @@ class Login extends Component {
 								onChange={this.handleChange} />
 							</div>
 							<div>
-								<Button bsStyle="info" type="submit">Login</Button>
+								<Button bsStyle="success" type="submit">Login</Button>
 							</div>
 							<div className="errors">
 								{this.state.error}

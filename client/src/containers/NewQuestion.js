@@ -75,7 +75,7 @@ class NewQuestion extends Component {
 						<input type="text" className="inputField" name="incorrect3" value={this.state.incorrect3} onChange={this.handleChange} />
 					</div>
 
-					<Button bsStyle="info" bsSize="large" type="submit" block>Create Question</Button>
+					<Button bsStyle="success" bsSize="large" type="submit" block>Create Question</Button>
 					<div className="errors">
 						{showErrors()}
 					</div>

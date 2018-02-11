@@ -83,7 +83,7 @@ class EditQuestion extends Component {
 						<input type="text" name="incorrect3" className="inputField" value={this.state.incorrect3} onChange={this.handleChange} />
 					</div>
 
-					<Button bsStyle="info" bsSize="large" type="submit" block>Update Question</Button>
+					<Button bsStyle="success" bsSize="large" type="submit" block>Update Question</Button>
 				</form>
 			</div>	
 		)
