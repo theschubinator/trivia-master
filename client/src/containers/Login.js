@@ -28,27 +28,24 @@ class Login extends Component {
 			if(!user.error) {
 				this.props.loadUser(user);
 				this.props.loadUserGames(user.id);
-				//Redirect to Profile Page!
 				this.props.history.push(`/users/${this.props.user.id}`);
 			} else { this.setState({ error: user.error}) }
 		});
 	}
 
 	render () {
-		const { formData, user } = this.props;
-
 		return (
 			<div className="row">
 				<div className="col-md-12 loginForm">
 					<form onSubmit={this.handleSubmit}>
 							<div className="username">
 								<label>Username:&nbsp;</label>
-								<input type="text" name="username" value={formData.username} 
+								<input type="text" name="username" value={this.state.username} 
 								  onChange={this.handleChange} />
 							</div>
 							<div className="password">
 								<label>Password:&nbsp;</label>
-								<input type="password" name="password" value={formData.password} 
+								<input type="password" name="password" value={this.state.password} 
 								onChange={this.handleChange} />
 							</div>
 							<div>
