@@ -26,6 +26,13 @@ export const editQuestion = (question, username) => {
 		payload: question
 	}
 }
+
+export const updateQuestions = (question) => {
+	return {
+		type: 'UPDATE_QUESTIONS',
+		payload: question
+	}
+}
  
 // ** ASYNC actions
 export const loadQuestions = () => {
@@ -73,5 +80,19 @@ export const updateQuestion = (formData, question_id) => {
 		})
 		.then(response => response.json())
 		.catch(error => console.log(error))
+	}
+}
+
+export const submitQuestion = (formData) => {
+	return dispatch => {
+		return fetch('/api/questions', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({formData: formData})
+		})
+		.catch(error => console.log(error))
+		.then(response => response.json())
 	}
 }

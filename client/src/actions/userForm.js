@@ -58,20 +58,20 @@ export const submitForm = (formData) => {
 	}
 }
 
-export const submitQuestionForm = (formData) => {
-	return dispatch => {
-		return fetch('/api/questions', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({formData: formData})
-		})
-		.catch(error => console.log(error))
-		.then(response => response.json())
-		.then(question => {
-			dispatch(updateQuestions(question))
-			dispatch(resetFormData())
-		})
-	}
-}
+// export const submitQuestionForm = (formData) => {
+// 	return dispatch => {
+// 		return fetch('/api/questions', {
+// 			method: 'POST',
+// 			headers: {
+// 				'Content-Type': 'application/json'
+// 			},
+// 			body: JSON.stringify({formData: formData})
+// 		})
+// 		.catch(error => console.log(error))
+// 		.then(response => response.json())
+// 		.then(question => {
+// 			dispatch(updateQuestions(question))
+// 			dispatch(resetFormData())
+// 		})
+// 	}
+// }

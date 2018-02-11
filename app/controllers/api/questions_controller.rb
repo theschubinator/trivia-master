@@ -10,7 +10,7 @@ class Api::QuestionsController < ApplicationController
 		if question.save
 			render json: question
 		else
-			render json: {error: 'Question could not be save'}
+			render json: {errors: question.errors.full_messages}
 		end
 	end
 
