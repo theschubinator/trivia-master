@@ -54,7 +54,7 @@ class EditQuestion extends Component {
 				<form onSubmit={this.handleSubmit}>
 					<div id="createQuestion">
 						<label>Question</label><br/>
-						<input type="text" name="question" value={this.state.question} onChange={this.handleChange} />
+						<input type="text" className="inputField" name="question" value={this.state.question} onChange={this.handleChange} />
 					</div>
 					<div id="createByCategory">
 						<label>Choose a Category</label><br />
@@ -68,22 +68,22 @@ class EditQuestion extends Component {
 					</div>
 					<div id="createAnswer">
 						<label>Answer</label><br/>
-						<input type="text" name="answer" value={this.state.answer} onChange={this.handleChange} />
+						<input type="text" name="answer" className="inputField" value={this.state.answer} onChange={this.handleChange} />
 					</div>
 					<div className="createIncorrectChoice">
 						<label>Incorrect Choice #1</label><br/>
-						<input type="text" name="incorrect1" value={this.state.incorrect1} onChange={this.handleChange} />
+						<input type="text" name="incorrect1" className="inputField" value={this.state.incorrect1} onChange={this.handleChange} />
 					</div>
 					<div className="createIncorrectChoice">
 						<label>Incorrect Choice #2</label><br/>
-						<input type="text" name="incorrect2" value={this.state.incorrect2} onChange={this.handleChange} />
+						<input type="text" name="incorrect2" className="inputField" value={this.state.incorrect2} onChange={this.handleChange} />
 					</div>
 					<div className="createIncorrectChoice">
 						<label>Incorrect Choice #3</label><br/>
-						<input type="text" name="incorrect3" value={this.state.incorrect3} onChange={this.handleChange} />
+						<input type="text" name="incorrect3" className="inputField" value={this.state.incorrect3} onChange={this.handleChange} />
 					</div>
 
-					<Button bsStyle="info" type="submit">Update Question</Button>
+					<Button bsStyle="info" bsSize="large" type="submit" block>Update Question</Button>
 				</form>
 			</div>	
 		)
