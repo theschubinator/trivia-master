@@ -6,13 +6,6 @@ const setQuestions = (questions) => {
 	}
 }
 
-const setCategories = (categories) => {
-	return {
-		type: 'LOAD_CATEGORIES',
-		payload: categories
-	}
-}
-
 const removeQuestion = (question_id) => {
 	return { 
 		type: 'DELETE_QUESTION',
