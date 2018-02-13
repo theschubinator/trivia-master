@@ -1,10 +1,15 @@
 import React from 'react';
 import LeaderBoard from '../components/LeaderBoard';
+import '../styles/home.css';
 
 export const Home = (props) => {
 	return (
 		<div className="container" id="home-page">
-			<h1 id="app-title">Welcome to Trivia Master</h1>
+		<div className="row" id="app-title">
+			<div className="col-md-12">
+				<h1>Welcome to Trivia Master</h1>
+			</div>
+		</div>
 				
 			<div className="row">
 				<div className="col-md-6" id="info">

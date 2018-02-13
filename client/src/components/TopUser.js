@@ -4,7 +4,7 @@ const TopUser = ({user, category, index}) => {
  	const cssClass = index % 2 === 0 ? 'top-user user1' : 'top-user user2'
 
 	return (
-		<div className="row test">
+		<div className={`row ${cssClass}`}>
 			<div className="col-md-4">
 				<p>{index+1}.{user.username} </p>
 			</div>

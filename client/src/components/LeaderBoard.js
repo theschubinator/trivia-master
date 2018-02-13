@@ -77,30 +77,30 @@ class LeaderBoard extends Component {
 
 		return (
 			<div>
-				<div className='row test'>
-					<div className="col-md-6">
+				<div className='row' id="title">
+					<div className="col-md-12">
 						<h1><b>Leaderboard</b></h1>
 					</div>
 				</div>
 
-				<div className="row test">
-					<h4 className="col-md-6 category"><b>Category:</b></h4>
-					<p className="col-md-4 category">{category}</p>
+				<div className="row" id="category">
+					<h4 className="col-md-12"><b>Category:</b> <span>{category}</span></h4>
+					
 				</div>
 
-				<div className="row test">
-					<Button bsSize="xsmall" bsStyle="success" name='total' onClick={this.handleClick}>All</Button>
-					<Button bsSize="xsmall" bsStyle="success" name='sports' onClick={this.handleClick}>Sports</Button>
-					<Button bsSize="xsmall" bsStyle="success" name='history' onClick={this.handleClick}>History</Button>
-					<Button bsSize="xsmall" bsStyle="success" name='science' onClick={this.handleClick}>Science</Button>
-					<Button bsSize="xsmall" bsStyle="success" name='entertainment' onClick={this.handleClick}>Entertainment</Button>
+				<div className="row" id="categoryBtn">
+					<Button bsSize="small" bsStyle="success" name='total' onClick={this.handleClick}>All</Button>
+					<Button bsSize="small" bsStyle="success" name='sports' onClick={this.handleClick}>Sports</Button>
+					<Button bsSize="small" bsStyle="success" name='history' onClick={this.handleClick}>History</Button>
+					<Button bsSize="small" bsStyle="success" name='science' onClick={this.handleClick}>Science</Button>
+					<Button bsSize="small" bsStyle="success" name='entertainment' onClick={this.handleClick}>Entertainment</Button>
 				</div>
 
-				<div className="row test">
-					<p className="leaderboardNotice">Top 10 users are shown.</p>
+				<div className="row leaderboardNotice">
+					<p>Top 10 users are shown.</p>
 				</div>
 
-				<div className="row">	
+				<div className="row" id="top-users">	
 					{showLeaderBoard(this.state.category)}
 				</div>
 				
