@@ -4,8 +4,8 @@ import LeaderBoard from '../components/LeaderBoard';
 export const Home = (props) => {
 	return (
 		<div id="homePage">
-			<div className="row">
-				<div className="col-sm-12">
+			<div>
+				<div>
 					<h1 id="appName">Welcome to Trivia Master</h1>
 				</div>
 			</div>
