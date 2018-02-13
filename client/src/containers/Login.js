@@ -46,6 +46,12 @@ class Login extends Component {
 					</div>
 
 					<div className="row">
+						<div classname="col-sm-12">
+							<p>Test</p>
+						</div>
+					</div>
+
+					<div className="row">
 						<div className="col-sm-12">
 							<label>Password:&nbsp;</label>
 							<input type="password" className="input-field" name="password" value={this.state.password} 
