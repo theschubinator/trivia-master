@@ -38,25 +38,33 @@ class Login extends Component {
 			<form onSubmit={this.handleSubmit}>
 				<div className="container">
 					<div className="row">
-						<label>Username:&nbsp;</label>
-						<input type="text" className="input-field" name="username" value={this.state.username} 
-						  onChange={this.handleChange} />
+						<div className="col-sm-12">
+							<label>Username:&nbsp;</label>
+							<input type="text" className="input-field" name="username" value={this.state.username} 
+							  onChange={this.handleChange} />
+							</div>
 					</div>
 
 					<div className="row">
-						<label>Password:&nbsp;</label>
-						<input type="password" className="input-field" name="password" value={this.state.password} 
-						  onChange={this.handleChange} />
+						<div className="col-sm-12">
+							<label>Password:&nbsp;</label>
+							<input type="password" className="input-field" name="password" value={this.state.password} 
+							  onChange={this.handleChange} />
+						</div>
 					</div>
 
 					<div className="row">
-						<Button bsStyle="warning" type="submit" block>LOGIN</Button>
+						<div className="col-sm-12">
+							<Button bsStyle="warning" type="submit" block>LOGIN</Button>
+						</div>
 					</div>
 
 					<div className="row errors">
-						{this.state.error}
+						<div className="col-sm-12">
+							{this.state.error}
+						</div>
 					</div>	
-					
+
 				</div>
 			</form>
 		)
