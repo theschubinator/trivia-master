@@ -1,8 +1,8 @@
 #oldGamesBoard {
 	background-color: #90bcce;
-	padding: 15px;
+	/*padding: 15px;*/
 	box-shadow: 5px 10px 10px #333333;
-	width: 400px;
+	/*width: 400px;*/
 }
 
 #oldGamesBoard h1 {
@@ -12,7 +12,7 @@
 
 #oldGames {
 	overflow: scroll;
-	height: 588px;
+	height: 300px;
 }
 
 #oldGamesBoard .gameHistory {
@@ -30,14 +30,14 @@
 }
 
 .gameCategory {
-	margin-right: -100px;
-	margin-left: -8px;
+	/*margin-right: -100px;*/
+	/*margin-left: -8px;*/
 }
 
 .gameResults {
 	margin-right: -20px;
-	margin-left: 30px;
-	padding: 0;
+	margin-left: 170px;
+	/*padding: 0;*/
 }
 
 #oldGamesBoard .gameHistory .viewGameBtn {
@@ -47,7 +47,7 @@
 }
 
 #categoryHeader {
-	margin-left: 5px;
+	/*margin-left: 5px;*/
 }
 
 #resultsHeader {
