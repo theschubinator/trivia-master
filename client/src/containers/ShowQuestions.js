@@ -50,8 +50,8 @@ class ShowQuestions extends Component {
 		)
 
 		return (
-			<div className="row" id="showQuestions">
-				<div className="col-md-8">
+			<div>
+				<div id="showQuestionsBtn">
 					<Button bsStyle="success" className="sortCategoriesBtn" name="All" onClick={this.handleClick}>All</Button>
 					<Button bsStyle="success" className="sortCategoriesBtn" name="Sports" onClick={this.handleClick}>Sports</Button>	
 					<Button bsStyle="success" className="sortCategoriesBtn" name="History" onClick={this.handleClick}>History</Button>
@@ -59,10 +59,10 @@ class ShowQuestions extends Component {
 					<Button bsStyle="success" className="sortCategoriesBtn" name="Entertainment" onClick={this.handleClick}>Entertainment</Button>
 				</div>
 
-				<div className="col-md4">
-					<p id="questionNote"><b>Note: </b><i>Green signifies the correct answer.</i></p>
+				<div id="quesitonNote">
+					<p><b>Note: </b><i>Green signifies the correct answer.</i></p>
 				</div>
-				<div>
+				<div id="showQuestions">
 					{(displayQuestions.length > 0) ? displayQuestions : displayNoQuestionAlert}
 				</div>
 			</div>

@@ -20,7 +20,7 @@ const NavBar = (props) => {
 
 	if(props.user.loggedIn) {
 		return (
-			<div id='header'>
+			<div id='NavBar'>
 				<NavLink id="homeLink" style={{...styles, ...{marginLeft: '10px', fontSize: '20px'}}} to="/">Trivia Master</NavLink>
 				<NavLink className="NavLink newGame" style={styles} to="/newgame">New Game</NavLink>
 				<NavLink className="NavLink showQuestions" style={styles} to="/questions">View Questions</NavLink>
@@ -32,7 +32,7 @@ const NavBar = (props) => {
 	} 
 	else {
 		return (
-			<div id='header'>
+			<div id='NavBar'>
 				<NavLink id="homeLink" style={{...styles, ...{marginLeft: '10px', fontSize: '20px'}}} to="/">Trivia Master</NavLink>
 				<NavLink className="NavLink Login" style={styles} to="/login">Login</NavLink>
 				<NavLink className="NavLink SignUp" style={styles} to="/signup">Sign Up</NavLink>
