@@ -1,4 +1,4 @@
-/*.inputField:focus {
+.inputField:focus {
 	background-color: #f2e718;
 }
 
@@ -68,4 +68,4 @@ form div input {
 	width: 70%;
 	height: 40px;
 	margin: 10px 0 10px 0;
-}*/
+}

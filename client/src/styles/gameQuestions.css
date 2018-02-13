@@ -1,4 +1,4 @@
-/*.gameCard {
+.gameCard {
 	border: 1px solid black;
 	margin: 100px 0px 15px 0px;
 	padding: 10px;
@@ -33,4 +33,4 @@
 .gameCard .createdByUser {
 	margin-left: -200px;
 	margin-right: 180px;
-}*/
+}

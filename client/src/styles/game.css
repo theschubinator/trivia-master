@@ -1,4 +1,4 @@
-/*#gameOptions {
+#gameOptions {
 	margin: 20px;
 	width: 514px;
 	padding: 20px 10px 20px 10px;
@@ -75,4 +75,4 @@
 .replayGame button:hover {
 	background-color: yellow;
 }
-*/
+
