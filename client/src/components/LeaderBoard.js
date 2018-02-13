@@ -6,6 +6,10 @@ import { Button, Well } from 'react-bootstrap';
 import { findUsersStats, statsByCategory } from '../helpers/statistics';
 import '../styles/leaderBoard.css';
 
+
+
+
+
 class LeaderBoard extends Component {
 	constructor() {
 		super();
@@ -41,7 +45,11 @@ class LeaderBoard extends Component {
 			const top10Users = userScoresByCategory.slice(0,10)
 
 			return top10Users.map((user, i) => {
-				return <TopUser key={i} user={user} category={category} index={i} />
+				return (
+					<div className="col-md-12">
+						<TopUser key={i} user={user} category={category} index={i} />
+					</div>
+				)
 			})
 		}
 
@@ -68,22 +76,39 @@ class LeaderBoard extends Component {
 		}
 
 		return (
-			<div className='leaderBoard'>
-				<h1><b>Leaderboard</b></h1>
-				<div className="row">
-					<h4 className="col-md-4 category"><b>Category:</b></h4>
-					<p className="col-md-8 category">{category}</p>
+			<div>
+				<div className='row test'>
+					<div className="col-md-6">
+						<h1><b>Leaderboard</b></h1>
+					</div>
 				</div>
-				<Button bsSize="xsmall" bsStyle="success" name='total' onClick={this.handleClick}>All</Button>
-				<Button bsSize="xsmall" bsStyle="success" name='sports' onClick={this.handleClick}>Sports</Button>
-				<Button bsSize="xsmall" bsStyle="success" name='history' onClick={this.handleClick}>History</Button>
-				<Button bsSize="xsmall" bsStyle="success" name='science' onClick={this.handleClick}>Science</Button>
-				<Button bsSize="xsmall" bsStyle="success" name='entertainment' onClick={this.handleClick}>Entertainment</Button>
-				<p className="leaderboardNotice">Top 10 users are shown.</p>
-				<Well className="leaderScores">
+
+				<div className="row test">
+					<h4 className="col-md-6 category"><b>Category:</b></h4>
+					<p className="col-md-4 category">{category}</p>
+				</div>
+
+				<div className="row test">
+					<Button bsSize="xsmall" bsStyle="success" name='total' onClick={this.handleClick}>All</Button>
+					<Button bsSize="xsmall" bsStyle="success" name='sports' onClick={this.handleClick}>Sports</Button>
+					<Button bsSize="xsmall" bsStyle="success" name='history' onClick={this.handleClick}>History</Button>
+					<Button bsSize="xsmall" bsStyle="success" name='science' onClick={this.handleClick}>Science</Button>
+					<Button bsSize="xsmall" bsStyle="success" name='entertainment' onClick={this.handleClick}>Entertainment</Button>
+				</div>
+
+				<div className="row test">
+					<p className="leaderboardNotice">Top 10 users are shown.</p>
+				</div>
+
+				<div className="row">	
 					{showLeaderBoard(this.state.category)}
-				</Well>
+				</div>
+				
+								
+
 				{ showCurrentUserRanking() }
+
+
 			</div>
 		)
 	}
