@@ -1,88 +1,11 @@
-/*.inputField:focus {
-	background-color: #f2e718;
-}
-
-.loginForm {
-	margin: 20px;
-	padding: 20px 0 15px 39px;
-	font-size: 20px;
-	border: 1px solid black;
-	background-color: #90bcce;
-	box-shadow: 1px 2px 8px #333333;
-}
-
-.loginForm.signUp {
-	padding-left: 70px;
-}
-
-.loginForm button {
-	box-shadow: 1px 2px 8px #333333;
-	margin: 5px 0 8px 0;
-}
-
-form div {
-	margin: 10px;
-}
-
-form div input {
-	width: 330px;
-}
-
-.password input {
-	margin-left: 2px;
-}
-
-.errors {
-	color: red;
-}
-
-.submitButton {
-	background-color: #1c99b2;
-}
-
-#questionForm {
-	margin: 30px 0 0 0;
-	border: 1px solid black;
-	padding: 20px;
-	font-size: 22px;
-	box-shadow: 1px 2px 8px #333333;
-	background-color: #57AED1;
-}
-
-#questionForm .inputField {
-	width: 100%;
-	height: 50px;
-	background-color: #f4f4f4;
-	margin-bottom: 20px;
-}
-
-#questionForm .inputField:focus {	
-	background-color: #f2e718;
-}
-
-#createByCategory {
-	text-align: center
-}
-
-#questionForm select {
-	width: 70%;
-	height: 40px;
-	margin: 10px 0 10px 0;
-}*/
-
-.login-form {
+.form {
 	margin-top: 20px;
-	padding: 15px;
+	padding: 25px;
 	border: 1px solid black;
 	background-color: #008B8B;
-	width: 30%;
 	color: black;
 	font-size: 1.2em;
 	box-shadow: 1px 2px 8px #333333;
-}
-
-.input-row {
-	margin: 5px;
 }
 
 .input-field {
@@ -90,9 +13,7 @@ form div input {
 	margin-bottom: 10px;
 }
 
-.input-row.login-btn button {
-	background-color: #ff9000;
-	color: black;
-	font-size: 1em;
-	box-shadow: 1px 1px 3px black;
+.form button {
+	box-shadow: 2px 2px 5px black;
+	margin-bottom: -5px;
 }
