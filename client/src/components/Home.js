@@ -5,13 +5,13 @@ export const Home = (props) => {
 	return (
 		<div id="homePage">
 			<div className="row">
-				<div className="col-md-12">
+				<div className="col-sm-12">
 					<h1 id="appName">Welcome to Trivia Master</h1>
 				</div>
 			</div>
 
 			<div className="row">
-				<div className="col-md-8" id="homeInfo">
+				<div className="col-sm-8" id="homeInfo">
 					<h2>What is Trivia Master</h2>
 						<p>
 							Trivia Master is a trivia game where users are able to compete against other users
@@ -28,7 +28,7 @@ export const Home = (props) => {
 							questions as well! These questions are added into the database, so that all users can enjoy your wonderful knowledge.
 						</p>
 				</div>
-				<div className="col-md-4">
+				<div className="col-sm-4">
 					<LeaderBoard />
 				</div>
 			</div>
