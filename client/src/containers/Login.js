@@ -36,7 +36,7 @@ class Login extends Component {
 	render () {
 		return (
 			<div className="row">
-				<div className="col-md-8 col-sm-12 form">
+				<div className="col-sm-12 form">
 					<form onSubmit={this.handleSubmit}>
 						<label>Username:&nbsp;</label>
 						<input type="text" className="input-field" name="username" value={this.state.username} 

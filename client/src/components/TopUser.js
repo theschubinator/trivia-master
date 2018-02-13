@@ -5,7 +5,7 @@ const TopUser = ({user, category, index}) => {
 
 	return (
 		<div className={`row ${cssClass}`}>
-			<div className="col-md-4">
+			<div className="col-md-6">
 				<p>{index+1}.{user.username} </p>
 			</div>
 			<div className="col-md-2">
