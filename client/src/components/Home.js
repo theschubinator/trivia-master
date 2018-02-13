@@ -29,7 +29,7 @@ export const Home = (props) => {
 							questions as well! These questions are added into the database, so that all users can enjoy your wonderful knowledge.
 						</p>
 				</div>
-				<div className="col-md-5" id="leader-board">
+				<div className="col-md-5" id="leaderboard">
 					<LeaderBoard />
 				</div>
 			</div>

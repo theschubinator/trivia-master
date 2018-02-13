@@ -9,17 +9,29 @@ const UserProfile = ({user, history}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
 
 	return (
-		<div>	
-			<h1>{user.username}</h1>
-			<div>
-				<UserGames history={history} />
+		<div className="container" id="user-profile">
+
+			<div className="row" id="username">
+				<div className="col-sm-12">
+					<h1>{user.username}</h1>
+				</div>
 			</div>
-			<div>
-				<UserStats />
+
+			<div className="row">
+				<div className="col-md-3 col-sm-10 box" id="user-games">
+					<UserGames history={history} />
+				</div>
+
+				<div className="col-md-3 col-sm-10 box" id="user-stats">
+					<UserStats />
+				</div>
+
+				<div className="col-md-5 col-sm-10 box" id='leaderboard'>
+					<LeaderBoard />
+				</div>
+
 			</div>
-			<div>
-				<LeaderBoard />
-			</div>
+
 		</div>
 		
 	)

@@ -19,10 +19,16 @@ export const GameResults = ({game, user, history, index, loadQuestion, setGame})
 	}
 	
 	return (
-		<div>
-			<p className="gameCategory">{game.category}</p>
-			<p className="gameResults">{game.correct/10 * 100 || 0}%</p>
-			<Button className="viewGameBtn" bsStyle="danger" bsSize="xsmall" onClick={handleClick}>View Game</Button>
+		<div className="row">
+			<div className="col-sm-5">
+				<p className="gameCategory">{game.category}</p>
+			</div>
+			<div className="col-sm-4">
+				<p className="gameResults">{game.correct/10 * 100 || 0}%</p>
+			</div>
+			<div className="col-sm-3">
+				<Button className="viewGameBtn" bsStyle="danger" bsSize="xsmall" onClick={handleClick}>View Game</Button>
+			</div>
 		</div>
 	)
 }

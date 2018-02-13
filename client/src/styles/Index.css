@@ -8,3 +8,113 @@ body {
 h1 {
 	text-align: center
 }
+
+/* NavBar */
+
+#NavBar {
+  background-color: #333;
+  height: 50px;
+}
+
+.NavLink:hover {
+	text-decoration: none;
+	background-color: #1c99b2;
+	color: black;
+}
+
+/* Leader Board */
+
+#leaderboard {
+	border: 1px solid black;
+	text-align: center;
+	background-color: #008B8B;
+	box-shadow: 6px 6px 15px black;
+	padding: 25px;
+}
+
+#leader-board #title {
+	margin-top: -15px;
+}
+
+#category {
+	text-align: left;
+	margin-bottom: 2px;
+}
+
+#categoryBtn {
+	margin: 3px;
+}
+#categoryBtn button {
+	margin: 3px;
+	font-size: 1em;
+	box-shadow: 4px 4px 10px black;
+	background-color: #ff9000;
+	color: black;
+}
+
+#categoryBtn button:hover {
+	background-color: white;
+	color: black;
+}
+
+.leaderboardNotice{
+	margin-top: 10px;
+}
+
+#top-users {
+	border: 2px dashed black;
+}
+
+#top-users .top-user {
+	padding-top: 10px;
+	border: 1px solid black;
+	font-size: 1.1em;
+}
+
+#top-users .top-user.user1 {
+	background-color: #f9efef
+}
+
+#top-users .top-user.user2 {
+	background-color: #b7b7b7
+}
+
+#current-ranking {
+	margin-top: 20px;
+	margin-bottom: -25px;
+}
+
+/* User Profile */
+#user-profile .box  {
+	margin: 5px;
+	background-color: #008B8B;
+	padding: 30px;
+	text-align: center;
+}
+
+#username {
+	border: 1px solid black;
+	margin-bottom: 20px;
+	background-color: black;
+	color: white;
+}
+
+#user-games {
+	border: 1px solid black;
+}
+
+#user-stats {
+	border: 1px solid black;
+}
+
+/* UserGames */
+
+#old-games button {
+	margin-top: 0px;
+	margin-bottom: 6px;
+	margin-left: -27px;
+}
+
+#game-total {
+	font-size: 1.2em;
+}

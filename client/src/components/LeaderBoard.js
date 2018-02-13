@@ -4,11 +4,6 @@ import { loadUsers } from '../actions/users';
 import TopUser from './TopUser';
 import { Button, Well } from 'react-bootstrap';
 import { findUsersStats, statsByCategory } from '../helpers/statistics';
-import '../styles/leaderBoard.css';
-
-
-
-
 
 class LeaderBoard extends Component {
 	constructor() {
@@ -104,9 +99,9 @@ class LeaderBoard extends Component {
 					{showLeaderBoard(this.state.category)}
 				</div>
 				
-								
-
-				{ showCurrentUserRanking() }
+				<div className="row" id="current-ranking">			
+					{ showCurrentUserRanking() }
+				</div>
 
 
 			</div>
