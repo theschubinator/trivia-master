@@ -35,24 +35,31 @@ class Login extends Component {
 
 	render () {
 		return (
-			<div className="container">
-				<div className="row">
-					<div className="col-sm-12 form">
-						<form onSubmit={this.handleSubmit}>
+			<div className="row">
+				<div className="col-sm-12">
+					<form onSubmit={this.handleSubmit}>
+
+						<div className="row">
 							<label>Username:&nbsp;</label>
 							<input type="text" className="input-field" name="username" value={this.state.username} 
 							  onChange={this.handleChange} />
-							<label>Password:&nbsp;</label>
-							<input type="password" className="input-field" name="password" value={this.state.password} 
-							  onChange={this.handleChange} />
+						</div>
+
+						<div className="row">
+								<label>Password:&nbsp;</label>
+								<input type="password" className="input-field" name="password" value={this.state.password} 
+								  onChange={this.handleChange} />
+						</div>
+
+						<div className="row">
 							<Button bsStyle="warning" type="submit" block>LOGIN</Button>
+						</div>
+
+						<div className="row errors">
+							{this.state.error}
+						</div>
 							
-							<div className="row errors">
-								{this.state.error}
-							</div>
-							
-						</form>
-					</div>
+					</form>
 				</div>
 			</div>
 		)
