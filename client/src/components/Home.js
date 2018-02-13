@@ -5,7 +5,7 @@ export const Home = (props) => {
 	return (
 		<div id="homePage">
 			<div className="row">
-				<div className="col-sm-12">
+				<div className="col-sm-10">
 					<h1 id="appName">Welcome to Trivia Master</h1>
 				</div>
 			</div>
