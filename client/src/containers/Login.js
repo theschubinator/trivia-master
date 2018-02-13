@@ -39,7 +39,7 @@ class Login extends Component {
 				<form onSubmit={this.handleSubmit}>
 
 					<div className="row input-row">
-						<div className="col-md-6">
+						<div className="col-md-12">
 							<label>Username:&nbsp;</label>
 							<input type="text" className="input-field" name="username" value={this.state.username} 
 							  onChange={this.handleChange} />
@@ -47,7 +47,7 @@ class Login extends Component {
 					</div>
 
 					<div className="row input-row">
-						<div className="col-md-6">
+						<div className="col-md-12">
 							<label>Password:&nbsp;</label>
 							<input type="password" className="input-field" name="password" value={this.state.password} 
 							onChange={this.handleChange} />
