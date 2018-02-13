@@ -35,44 +35,43 @@ class Login extends Component {
 
 	render () {
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<div className="container">
-					<div className="row">
-						<div className="col-sm-12">
-							<label>Username:&nbsp;</label>
-							<input type="text" className="input-field" name="username" value={this.state.username} 
-							  onChange={this.handleChange} />
+			<div className="container" id="user-form">
+
+				<div className="row col-sm-12">
+					<form onSubmit={this.handleSubmit}>
+
+						<div className="row">
+							<div className="col-sm-12">
+								<label>Username:&nbsp;</label>
+								<input type="text" className="input-field" name="username" value={this.state.username} 
+								  onChange={this.handleChange} />
 							</div>
-					</div>
-
-					<div className="row">
-						<div classname="col-sm-12">
-							<p>Test</p>
 						</div>
-					</div>
 
-					<div className="row">
-						<div className="col-sm-12">
-							<label>Password:&nbsp;</label>
-							<input type="password" className="input-field" name="password" value={this.state.password} 
-							  onChange={this.handleChange} />
+						<div className="row">
+							<div className="col-sm-12">
+								<label>Password:&nbsp;</label>
+								<input type="password" className="input-field" name="password" value={this.state.password} 
+								  onChange={this.handleChange} />
+							</div>
 						</div>
-					</div>
 
-					<div className="row">
-						<div className="col-sm-12">
-							<Button bsStyle="warning" type="submit" block>LOGIN</Button>
+						<div className="row">
+							<div className="col-sm-12">
+								<Button bsStyle="warning" type="submit" block>LOGIN</Button>
+							</div>
 						</div>
-					</div>
-
-					<div className="row errors">
-						<div className="col-sm-12">
-							{this.state.error}
+								
+						<div className="row errors">
+							<div className="col-sm-12">
+								{this.state.error}
+							</div>
 						</div>
-					</div>	
 
+					</form>
 				</div>
-			</form>
+
+			</div>
 		)
 	}
 }
