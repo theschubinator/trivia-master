@@ -35,24 +35,30 @@ class Login extends Component {
 
 	render () {
 		return (
-			<div className="loginForm">
+			<div className="login-form">
 				<form onSubmit={this.handleSubmit}>
-						<div className="username">
+
+					<div className="row input-row">
+						<div className="col-md-6">
 							<label>Username:&nbsp;</label>
-							<input type="text" className="inputField" name="username" value={this.state.username} 
+							<input type="text" className="input-field" name="username" value={this.state.username} 
 							  onChange={this.handleChange} />
 						</div>
-						<div className="password">
+					</div>
+
+					<div className="row input-row">
+						<div className="col-md-6">
 							<label>Password:&nbsp;</label>
-							<input type="password" className="inputField" name="password" value={this.state.password} 
+							<input type="password" className="input-field" name="password" value={this.state.password} 
 							onChange={this.handleChange} />
+							<div className="row input-row login-btn">
+								<Button bsStyle="success" type="submit" block>LOGIN</Button>
+							</div>
+							<div className="row errors">
+								{this.state.error}
+							</div>
 						</div>
-						<div>
-							<Button bsStyle="success" type="submit">Login</Button>
-						</div>
-						<div className="errors">
-							{this.state.error}
-						</div>
+					</div>
 				</form>
 			</div>
 		)

@@ -69,3 +69,32 @@ form div input {
 	height: 40px;
 	margin: 10px 0 10px 0;
 }*/
+
+.login-form {
+	margin-top: 20px;
+	border: 1px solid black;
+	width: 500px;
+	background-color: #008B8B;
+	color: black;
+	font-size: 1.2em;
+}
+
+.input-row {
+	margin: 5px;
+}
+
+.input-field {
+	width: 452px;
+}
+
+.input-row.login-btn {
+	margin-top: 10px;
+	margin-left: 0px;
+}
+
+.input-row.login-btn button {
+	background-color: #ff9000;
+	color: black;
+	font-size: 1em;
+	box-shadow: 1px 1px 3px black;
+}
