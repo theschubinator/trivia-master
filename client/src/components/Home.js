@@ -3,15 +3,15 @@ import LeaderBoard from '../components/LeaderBoard';
 
 export const Home = (props) => {
 	return (
-		<div id="homePage">
-			<div>
-				<div>
-					<h1 id="appName">Welcome to Trivia Master</h1>
+		<div className="container" id="home-page">
+			<div className="row">
+				<div className="col-md-12">
+					<h1 id="app-title">Welcome to Trivia Master</h1>
 				</div>
 			</div>
 
-			<div>
-				<div id="homeInfo">
+			<div className="row">
+				<div className="col-md-6" id="info">
 					<h2>What is Trivia Master</h2>
 						<p>
 							Trivia Master is a trivia game where users are able to compete against other users
@@ -28,7 +28,7 @@ export const Home = (props) => {
 							questions as well! These questions are added into the database, so that all users can enjoy your wonderful knowledge.
 						</p>
 				</div>
-				<div>
+				<div className="col-md-6" id="leader-board">
 					<LeaderBoard />
 				</div>
 			</div>
