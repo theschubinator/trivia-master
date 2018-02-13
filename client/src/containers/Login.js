@@ -37,7 +37,7 @@ class Login extends Component {
 		return (
 			<div className="container" id="user-form">
 
-				<div className="row col-sm-12">
+				<div className="row col-sm-12 col-md-5">
 					<form onSubmit={this.handleSubmit}>
 
 						<div className="row">
@@ -62,13 +62,14 @@ class Login extends Component {
 							</div>
 						</div>
 								
-						<div className="row errors">
-							<div className="col-sm-12">
-								{this.state.error}
-							</div>
-						</div>
-
 					</form>
+
+					<div className="row errors">
+						<div className="col-sm-12">
+							{this.state.error}
+						</div>
+					</div>
+					
 				</div>
 
 			</div>

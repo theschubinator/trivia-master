@@ -46,33 +46,61 @@ class SignUp extends Component {
 	
 	render () {
 		const showErrors = () => { return this.state.errors.map((error, i) => <p id={`error_${i+1}`}>{error}</p>) };
-
+		console.log(this.state.errors)
 		return (
-			<div className= "loginForm signUp">
-				<form onSubmit={this.handleSubmit}>
-					<div>
-						<label>Username</label><br/>
-						<input type="text" clasName="inputField" name="username" value={this.state.username} onChange={this.handleChange} />
-					</div>
-					<div className="email">
-						<label>Email</label><br/>
-						<input type="text" className="inputField" name="email" value={this.state.email} onChange={this.handleChange} />
-					</div>
-					<div className="password">
-						<label>Password</label><br/>
-						<input type="password" className="inputField" name="password" value={this.state.password} onChange={this.handleChange} />
-					</div>
-					<div className="passwordConfirmation">
-						<label>Password Confirmation</label><br/>
-						<input type="password" className="inputField" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange} />
-					</div>
-					<div>
-						<Button bsStyle="success" className="submitBtn" type="submit">Sign Up</Button>
-					</div>
-					<div className="errors">
-						{showErrors()}
-					</div>
-				</form>
+			<div className="container" id="user-form">
+
+				<div className="row col-sm-12 col-md-5">
+					<form onSubmit={this.handleSubmit}>
+
+						<div className="row">
+							<div className="col-sm-12">
+								<label>Username:&nbsp;</label>
+								<input type="text" className="input-field" name="username" value={this.state.username} 
+								  onChange={this.handleChange} />
+							</div>
+						</div>
+
+						<div className="row">
+							<div className="col-sm-12">
+								<label>Email:&nbsp;</label>
+								<input type="text" className="input-field" name="email" value={this.state.email} 
+								  onChange={this.handleChange} />
+							</div>
+						</div>
+
+						<div className="row">
+							<div className="col-sm-12">
+								<label>Password:&nbsp;</label>
+								<input type="password" className="input-field" name="password" value={this.state.password} 
+								  onChange={this.handleChange} />
+							</div>
+						</div>
+
+						<div className="row">
+							<div className="col-sm-12">
+								<label>Password Confirmation:&nbsp;</label>
+								<input type="password" className="input-field" name="password_confirmation" value={this.state.password_confirmation} 
+								  onChange={this.handleChange} />
+							</div>
+						</div>
+
+						<div className="row">
+							<div className="col-sm-12">
+								<Button bsStyle="warning" type="submit" block>LOGIN</Button>
+							</div>
+						</div>
+
+					</form>
+
+					<div className="row errors">
+							<div className="col-sm-12">
+							 { showErrors() }
+							</div>
+						</div>
+
+				</div>
+
 			</div>
 		)
 	}
