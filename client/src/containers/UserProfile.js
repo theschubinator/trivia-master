@@ -15,7 +15,7 @@ const UserProfile = ({user, history}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
 
 	return (
-		<div className="container" id="user-profile">
+		<div id="user-profile">
 
 			<div className="row" id="username">
 				<div className="col-sm-10">

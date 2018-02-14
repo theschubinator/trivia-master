@@ -4,7 +4,7 @@ import '../styles/home.css';
 
 export const Home = (props) => {
 	return (
-		<div className="container" id="home-page">
+		<div id="home-page">
 		<div className="row" id="app-title">
 			<div className="col-md-12">
 				<h1>Welcome to Trivia Master</h1>

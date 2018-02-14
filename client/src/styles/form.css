@@ -1,8 +1,8 @@
-.container {
+/*.container-fluid {
 	margin-top: 20px;
 }
 
-.container form {
+.container-fluid form {
 	margin-top: 20px;
 	padding: 25px;
 	border: 1px solid black;
@@ -17,7 +17,7 @@
 	margin-bottom: 10px;
 }
 
-.container button {
+.container-fluid button {
 	box-shadow: 2px 2px 5px black;
 	margin-top: 5px;
 	margin-bottom: -5px;
@@ -32,4 +32,4 @@
 
 .errors p {
 	margin: 0px;
-}
+}*/

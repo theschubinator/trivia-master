@@ -13,7 +13,7 @@ import EditQuestion from '../containers/EditQuestion';
 
 export const Routes = () => {
 	return (
-		<div className>
+		<div className="container">
 			<Route exact path='/' component={Home} />	
 			<Route exact path='/login' component={Login} />
 			<Route exact path='/signup' component={SignUp} />

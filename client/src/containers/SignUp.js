@@ -48,7 +48,7 @@ class SignUp extends Component {
 		const showErrors = () => { return this.state.errors.map((error, i) => <p id={`error_${i+1}`}>{error}</p>) };
 		console.log(this.state.errors)
 		return (
-			<div className="container" id="user-form">
+			<div id="user-form">
 
 				<div className="row col-sm-12 col-md-5">
 					<form onSubmit={this.handleSubmit}>
