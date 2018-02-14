@@ -3,16 +3,16 @@ import '../styles/game.css';
 
 export const GameBoard = ({game}) => {
 	const answers = game.results.map((result, index) => {
-		const answer = result ? 'Correct' : 'Incorrect';
+		const answer = result ? 'correct' : 'incorrect';
 		return (
-			<li key={index} className={ answer + 'Result' }>
+			<li key={index} className={ answer }>
 				{ answer }
 			</li>
 		)
 	})
 	
 	return (
-		<div className="gameBoard">
+		<div id="gameBoard">
 			<h2>Results</h2>
 			<ol>
 				{ answers }

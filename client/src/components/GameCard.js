@@ -16,14 +16,38 @@ const GameCard = ({question, updateGameResults}) => {
 	const shuffledKeys = shuffle(Object.keys(question).slice(2,6))
 
 	return (
-		<div className="gameCard">
-			<h2>{question.question}</h2>
-			<h4>Created by: {question.user.username}</h4>	
-			<h4>Category: {question.category.name}</h4>
-			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[0]]}</p>
-			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[1]]}</p>
-			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[2]]}</p>
-			<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[3]]}</p>
+		<div id="gameCard">
+			<div className="row question-info">
+				<div className="col-sm-6">
+					<h4 id="question-creator">Created by: {question.user.username}</h4>	
+					<h4 id='question-category'>Category: {question.category.name}</h4>
+				</div>
+			</div>
+
+			<div className="row">
+				<div className="col-sm-12">
+					<h2>{question.question}</h2>
+				</div>
+			</div>
+			<div id="question-choices">
+				<div className="row">
+					<div className="col-sm-6">
+						<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[0]]}</p>
+					</div>
+					<div className="col-sm-6">
+						<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[1]]}</p>
+					</div>
+				</div>
+			
+				<div className="row">
+					<div className="col-sm-6">
+						<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[2]]}</p>
+					</div>
+					<div className="col-sm-6">
+						<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[3]]}</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }

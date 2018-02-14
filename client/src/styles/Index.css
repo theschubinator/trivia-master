@@ -85,13 +85,6 @@ h1 {
 	margin: 3px;
 	font-size: 1em;
 	box-shadow: 4px 4px 10px black;
-	background-color: #ff9000;
-	color: black;
-}
-
-#categoryBtn button:hover {
-	background-color: white;
-	color: black;
 }
 
 .leaderboardNotice{
@@ -158,10 +151,7 @@ h1 {
 	text-align: center;
 }
 
-#test {
-	height: 700px;
-	overflow: scroll;
-}
+
 
 ::-webkit-scrollbar {
    display: none;
@@ -177,5 +167,74 @@ h1 {
 
 /* gameOptions */
 #gameOptions {
+	text-align: center;
+}
+
+#gameOptions button {
+	margin: 5px;
+	box-shadow: 4px 4px 10px black;
+}
+
+/* Game Card */
+#gameCard {
+	margin-top: 100px;
+	border: 1px solid black;
+	padding: 5px;
+	background-color: #008B8B;
+	box-shadow: 6px 6px 15px black;
+	color: white;
+}
+
+#gameCard h4 {
+	font-size: 1em;
+	margin-bottom: 20px;
+}
+
+#question-creator {
+	margin: 0px;
+}
+
+#question-category {
+	margin-top: -10px;
+}
+
+#gameCard h2 {
+	border: 1px solid black;
+	padding: 20px;
+	background-color: #90c3db;
+	color: black;
+	font-size: 1.6em;
+}
+
+#question-choices {
+	margin: 15px;
+	font-size: 1.2em;
+}
+
+#question-choices .col-sm-6 {
+	padding: 10px;
+}
+
+#question-choices .col-sm-6:hover {
+	background-color: #ed9a15;
+	color: black;
+}
+
+/* Game Board */
+#gameBoard {
+	margin-top: 100px;
+	border: 1px solid black;
+	height: 350px;
+	padding: 20px;
+	text-align: center;
+}
+
+#gameBoard .incorrect {
+	background-color: red;
+	border: 1px solid black;
+}
+
+#gameBoard .correct {
+	background-color: green;
 	border: 1px solid black;
 }

@@ -15,17 +15,24 @@ const GameOptions = (props) => {
 	}
 
 	return (
-		<div id="gameOptions">
-			<div className="row">
-				<div className="col-md-6 col-sm-12">
-					<label>Choose Category</label><br/>
-					<Button name="All" onClick={handleClick}>All</Button>
-					<Button name="Sports" onClick={handleClick}>Sports</Button>
-					<Button name="History" onClick={handleClick}>History</Button>
-					<Button name="Entertainment" onClick={handleClick}>Entertainment</Button>
-					<Button name= "Science" onClick={handleClick}>Science</Button>	
+		<div id ="gameOptions">
+
+				<div className="row">
+					<div className="col-md-6">
+						<label>Choose Category</label><br/>
+					</div>
+				</div>
+
+				<div className="row">
+					<div className="col-md-6 col-sm-12">
+						<Button bsStyle="warning" name="All" onClick={handleClick}>All</Button>
+						<Button bsStyle="warning" name="Sports" onClick={handleClick}>Sports</Button>
+						<Button bsStyle="warning" name="History" onClick={handleClick}>History</Button>
+						<Button bsStyle="warning" name="Entertainment" onClick={handleClick}>Entertainment</Button>
+						<Button bsStyle="warning" name= "Science" onClick={handleClick}>Science</Button>	
+					</div>
 				</div>	
-			</div>
+
 		</div>		
 	)
 }

@@ -21,11 +21,11 @@ class PlayGame extends Component {
 		}
 
 		return (
-			<div>
-				<div>
+			<div className="row">
+				<div className="col-md-8 col-sm-12">
 					{ playGame() }
 				</div>
-				<div>
+				<div className="col-md-4 col-sm-12">
 					<GameBoard game={game}/>
 				</div>
 			</div>

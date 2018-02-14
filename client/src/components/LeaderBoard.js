@@ -82,11 +82,11 @@ class LeaderBoard extends Component {
 					<h4 className="col-md-12"><b>Category:</b> <span>{category}</span></h4>		
 				</div>
 				<div className="row" id="categoryBtn">
-					<Button bsSize="small" bsStyle="success" name='total' onClick={this.handleClick}>All</Button>
-					<Button bsSize="small" bsStyle="success" name='sports' onClick={this.handleClick}>Sports</Button>
-					<Button bsSize="small" bsStyle="success" name='history' onClick={this.handleClick}>History</Button>
-					<Button bsSize="small" bsStyle="success" name='science' onClick={this.handleClick}>Science</Button>
-					<Button bsSize="small" bsStyle="success" name='entertainment' onClick={this.handleClick}>Entertainment</Button>
+					<Button bsSize="small" bsStyle="warning" name='total' onClick={this.handleClick}>All</Button>
+					<Button bsSize="small" bsStyle="warning" name='sports' onClick={this.handleClick}>Sports</Button>
+					<Button bsSize="small" bsStyle="warning" name='history' onClick={this.handleClick}>History</Button>
+					<Button bsSize="small" bsStyle="warning" name='science' onClick={this.handleClick}>Science</Button>
+					<Button bsSize="small" bsStyle="warning" name='entertainment' onClick={this.handleClick}>Entertainment</Button>
 				</div>
 				<div className="row leaderboardNotice">
 					<p>Top 10 users are shown.</p>
