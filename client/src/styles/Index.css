@@ -298,7 +298,7 @@ body #NavBar {
 }
 
 /* Old Question Card */
-.question-card {
+.question-card-old {
 	margin: 5px;
 	padding: 3px;
 
@@ -312,14 +312,14 @@ body #NavBar {
 	background-color: #e0e0e0;
 }
 
-.question-card h3 {
+.question-card-old h3 {
 	padding: 5px;
 }
 
-.question-card.answered-correct {
+.question-card-old.answered-correct {
 	background-color: green;
 }
 
-.question-card.answered-wrong {
+.question-card-old.answered-wrong {
 	background-color: red;
 }

@@ -2,8 +2,8 @@ import React from 'react';
 
 export const OldGameQuestionCard = ({ question }) => {
 	const divClassName = () => {
-		if(question.correct) return 'question-card answered-correct'
-		return 'question-card answered-wrong'
+		if(question.correct) return 'question-card-old answered-correct'
+		return 'question-card-old answered-wrong'
 	}
 
 	return (
