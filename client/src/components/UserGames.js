@@ -80,7 +80,7 @@ const UserGames = ({userGames, user, history, loadQuestion, setGame}) => {
 					<h1>{ user.games.length }</h1>
 				</div>
 			</div>
-			<div id='test'>
+			<div>
 				<Table id="user-games-table">
 					<thead>
 						<tr>
