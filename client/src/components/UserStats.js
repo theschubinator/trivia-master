@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import '../styles/userStatisticsBoard.css';
 
 const UserStats = ({user}) => {
 	return (

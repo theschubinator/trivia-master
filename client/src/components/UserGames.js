@@ -1,65 +1,101 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import GameResults from './GameResults';
+import UserStats from './UserGames';
+import { Table, Button, Pagination } from 'react-bootstrap';
+import { loadQuestion, setGame } from '../actions/game';
 
-const UserGames = ({userGames, user, history}) => {
-	const gamesPlayed = user.games.length
+const UserGames = ({userGames, user, history, loadQuestion, setGame}) => {
 
-	const displayGame = () => {
-		if(gamesPlayed === 0) {
-			return (
-				<div className="row">
-					<div className="col-sm-12">
-						<h4><i>You haven't played any games yet.</i></h4>
-					</div>
-				</div>
-			)
-	  }
-	  else {
-	 		return (
-	 			<div id='old-games'>
-	 				{viewGame}
-	 			</div>
-	 		)
-	  }
+	const handleClick = (e) => {
+		const game_id = e.target.name
+		loadQuestion(`/users/${user.id}/games/${game_id}`)
+		.then(game => { setGame(game)
+			const redirect = () => { return history.push(`${user.id}/games/${game_id}`) }
+			//componentDidMount() will not work on ShowGame page, therefore we are
+			//delaying the redirect in order to allow time for the game to be mounted
+			// to the state.
+			setTimeout(redirect, 3)
+		})
+		
 	}
 
 	const viewGame = user.games.map((game, i) => {
-		const cssClass = i % 2 === 0 ? 'game1' : 'game2'
-		return <p key={i} className={`old-game ${cssClass}`}><GameResults game={game} index={i} history={history} /></p>
+		return ( 
+			<tr key={i} id="old-game">
+				<th>{game.category}</th>
+				<th>{game.correct/10 * 100 || 0}%</th>
+				<th><Button bsStyle="danger" bsSize="xsmall" name={game.id} onClick={handleClick}>View Game</Button></th>
+			</tr> 
+		)
 	})
+
+	const displayGame = () => {
+		if(user.games.length === 0)
+			return <tr><th>You haven't palyed any games yet.</th></tr>
+	  else 
+	 		return <tbody id="old-games">{ viewGame }</tbody>
+	}
 
 	return (
 		<div>
-			<div className="row">
-				<div className="col-sm-12">
-					<h1>Games</h1>
-				</div>
-				<div className="row" id="game-total">
-					<div className="col-sm-4">
-						<p>Played: </p>
-					</div>
-					<div className="col-sm-2">
-					 <p>{ gamesPlayed }</p>
-					</div>
+			<div className="row" id="Statsheader">
+				<div className="col-md-12">
+					<h1>Statistics</h1>
 				</div>
 			</div>
-				
-			<div className="row">
-				<div className="col-sm-5">
-					<p><b>Category</b></p>
+
+			<Table id="user-stats-table">
+				<thead>
+				 <tr>
+				 	<th>Total</th>
+				 	<th>Sports</th>
+				 	<th>History</th>
+				 	<th>Entertainment</th>
+				 	<th>Science</th>
+				 </tr>
+				</thead>
+				<tbody>
+					<th>{Math.round(user.total_correct/(user.games_played * 10) * 100) || 0}%</th>
+					<th>{Math.round((user.sports_correct/user.sports_played) * 100) || 0}%</th>
+					<th>{Math.round((user.history_correct/user.history_played) * 100) || 0}%</th>
+					<th>{Math.round((user.entertainment_correct/user.entertainment_played) * 100) || 0}%</th>
+					<th>{Math.round((user.science_correct/user.science_played) * 100) || 0}%</th>
+				</tbody>
+			</Table>
+
+			
+			<div id="test">
+				<div className="row">
+					<div className="col-sm-9">
+						<h1>Games Played:</h1>
+					</div>
+					<div className="col-sm-3">
+						<h1>{ user.games.length }</h1>
+					</div>
 				</div>
-				<div className="col-sm-4">
-					<p><b>Results</b></p>
-				</div>
+
+				<Table id="user-games-table">
+					<thead>
+						<tr>
+							<th>Category</th>
+							<th>Results</th>
+							<th></th>
+						</tr>
+					</thead>
+					{displayGame()}
+				</Table>
 			</div>
-			{displayGame()}
+
+			
 		</div>
 	)
 }
+
 const mapStateToProps = (state) => {
 	return {
 		user: state.currentUser
 	}
 }
-export default connect(mapStateToProps)(UserGames);
+
+export default connect(mapStateToProps, { loadQuestion, setGame })(UserGames);

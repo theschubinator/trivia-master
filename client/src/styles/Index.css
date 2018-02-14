@@ -101,20 +101,42 @@ h1 {
 
 #user-games {
 	border: 1px solid black;
+	padding: 0;
+}
+
+/* UserGames */
+#test {
+	overflow: auto;
+	height: 586px;
 }
 
 #user-stats {
 	border: 1px solid black;
+	height: 739px;
+	overflow: auto;
 }
 
-/* UserGames */
+#user-games {
+	margin: 5px;
+	background-color: #008B8B;
+	box-shadow: 6px 6px 15px black;
+	text-align: center;
+}
 
+#user-games-table {
+	overflow: scroll;
+}
+
+::-webkit-scrollbar {
+   background-color: #008B8B;
+}
+ 
 #old-games button {
-	margin-top: 0px;
-	margin-bottom: 6px;
-	margin-left: -27px;
+	margin-top: -10px;
 }
 
-#game-total {
+#user-stats-table th {
+	text-align: center;
 	font-size: 1.2em;
 }
+
