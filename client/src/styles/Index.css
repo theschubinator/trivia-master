@@ -86,7 +86,7 @@ h1 {
 
 /* User Profile */
 #user-profile .box  {
-	margin: 5px;
+	margin: 23px;
 	background-color: #008B8B;
 	padding: 30px;
 	text-align: center;
@@ -105,7 +105,7 @@ h1 {
 }
 
 /* UserGames */
-#test {
+#old-games-table {
 	overflow: auto;
 	height: 586px;
 }

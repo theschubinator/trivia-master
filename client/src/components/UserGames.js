@@ -65,7 +65,7 @@ const UserGames = ({userGames, user, history, loadQuestion, setGame}) => {
 			</Table>
 
 			
-			<div id="test">
+			<div id="old-games-table">
 				<div className="row">
 					<div className="col-sm-9">
 						<h1>Games Played:</h1>
