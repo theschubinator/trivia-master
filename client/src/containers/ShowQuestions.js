@@ -36,7 +36,7 @@ class ShowQuestions extends Component {
 
 		const displayQuestions = permittedQuestions().map((question, i) => {
 			return (
-				<div className="col-md-6" key={i}>
+				<div className="col-md-6 col-sm-12" key={i}>
 					<QuestionCard question={question} />
 				</div>
 			)
@@ -50,19 +50,24 @@ class ShowQuestions extends Component {
 		)
 
 		return (
-			<div>
-				<div id="showQuestionsBtn">
-					<Button bsStyle="success" className="sortCategoriesBtn" name="All" onClick={this.handleClick}>All</Button>
-					<Button bsStyle="success" className="sortCategoriesBtn" name="Sports" onClick={this.handleClick}>Sports</Button>	
-					<Button bsStyle="success" className="sortCategoriesBtn" name="History" onClick={this.handleClick}>History</Button>
-					<Button bsStyle="success" className="sortCategoriesBtn" name="Science" onClick={this.handleClick}>Science</Button>
-					<Button bsStyle="success" className="sortCategoriesBtn" name="Entertainment" onClick={this.handleClick}>Entertainment</Button>
+			<div id='show-questions'>
+				<div className="row">
+					<div className="col-md-6 col-sm-12" id="showQuestionsBtn">
+						<Button bsStyle="success" className="sortCategoriesBtn" name="All" onClick={this.handleClick}>All</Button>
+						<Button bsStyle="success" className="sortCategoriesBtn" name="Sports" onClick={this.handleClick}>Sports</Button>	
+						<Button bsStyle="success" className="sortCategoriesBtn" name="History" onClick={this.handleClick}>History</Button>
+						<Button bsStyle="success" className="sortCategoriesBtn" name="Science" onClick={this.handleClick}>Science</Button>
+						<Button bsStyle="success" className="sortCategoriesBtn" name="Entertainment" onClick={this.handleClick}>Entertainment</Button>
+					</div>
 				</div>
 
-				<div id="quesitonNote">
-					<p><b>Note: </b><i>Green signifies the correct answer.</i></p>
+				<div className="row">
+					<div className="col-md-6 col-sm-12" id="quesitonNote">
+						<p><b>Note: </b><i>Green signifies the correct answer.</i></p>
+					</div>
 				</div>
-				<div id="showQuestions">
+
+				<div className="row" id="showQuestions">
 					{(displayQuestions.length > 0) ? displayQuestions : displayNoQuestionAlert}
 				</div>
 			</div>
