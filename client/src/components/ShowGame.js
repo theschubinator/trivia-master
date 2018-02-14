@@ -8,11 +8,11 @@ const ShowGame = ({user, oldGame}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
 		
 	const showGameQuestions = oldGame.questions.map((question, i) => {
-		return <OldGameQuestionCard key={i} question={question} />
+		return <div className="col-md-6 col-sm-12"><OldGameQuestionCard key={i} question={question} /></div>
 	})
 
 	return (
-		<div>
+		<div className="row">
 			{showGameQuestions}
 		</div>
 	)
