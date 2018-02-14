@@ -4,13 +4,7 @@ import { connect } from 'react-redux';
 import UserGames from '../components/UserGames';
 import UserStats from '../components/UserStats';
 import LeaderBoard from '../components/LeaderBoard';
-/*
 
-
-
-
-
-				*/
 const UserProfile = ({user, history}) => {
 	if(!user.loggedIn) return <Redirect to="/" />
 

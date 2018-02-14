@@ -31,20 +31,20 @@ const GameCard = ({question, updateGameResults}) => {
 			</div>
 			<div id="question-choices">
 				<div className="row">
-					<div className="col-sm-6">
-						<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[0]]}</p>
+					<div className="col-sm-6" onClick={handleClick}>
+						<p className="questionChoice">{question[shuffledKeys[0]]}</p>
 					</div>
-					<div className="col-sm-6">
-						<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[1]]}</p>
+					<div className="col-sm-6" onClick={handleClick}>
+						<p className="questionChoice">{question[shuffledKeys[1]]}</p>
 					</div>
 				</div>
 			
 				<div className="row">
-					<div className="col-sm-6">
-						<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[2]]}</p>
+					<div className="col-sm-6" onClick={handleClick}>
+						<p className="questionChoice">{question[shuffledKeys[2]]}</p>
 					</div>
-					<div className="col-sm-6">
-						<p className="questionChoice" onClick={handleClick}>{question[shuffledKeys[3]]}</p>
+					<div className="col-sm-6" onClick={handleClick}>
+						<p className="questionChoice">{question[shuffledKeys[3]]}</p>
 					</div>
 				</div>
 			</div>
