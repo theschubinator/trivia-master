@@ -51,21 +51,22 @@ class LeaderBoard extends Component {
 		const showCurrentUserRanking = () => {
 			if(user.loggedIn) {
 				return (
-					<Well id="currentUserRanking">
+					<div id="current-ranking">
 						<div className="row">
-							<div className="col-md-12">
+							<div className="col-sm-12">
 								<p>Your current ranking is...</p>
 							</div>
 						</div>
 						<div className="row">
-							<div className="col-md-8 currentUserRanking">
+							<div className="col-sm-8 currentUserRanking">
 								<p>{currentUserRank.ranking}. {user.username}</p>
 							</div>
-							<div className="col-md-4 currentUserScore">
+							<div className="col-sm- currentUserScore">
 								<p>{currentUserRank[this.state.category]}%</p>
 							</div>
 						</div>
-					</Well>
+					</div>
+					
 				)
 			}
 		}
@@ -77,12 +78,9 @@ class LeaderBoard extends Component {
 						<h1><b>Leaderboard</b></h1>
 					</div>
 				</div>
-
 				<div className="row" id="category">
-					<h4 className="col-md-12"><b>Category:</b> <span>{category}</span></h4>
-					
+					<h4 className="col-md-12"><b>Category:</b> <span>{category}</span></h4>		
 				</div>
-
 				<div className="row" id="categoryBtn">
 					<Button bsSize="small" bsStyle="success" name='total' onClick={this.handleClick}>All</Button>
 					<Button bsSize="small" bsStyle="success" name='sports' onClick={this.handleClick}>Sports</Button>
@@ -90,20 +88,13 @@ class LeaderBoard extends Component {
 					<Button bsSize="small" bsStyle="success" name='science' onClick={this.handleClick}>Science</Button>
 					<Button bsSize="small" bsStyle="success" name='entertainment' onClick={this.handleClick}>Entertainment</Button>
 				</div>
-
 				<div className="row leaderboardNotice">
 					<p>Top 10 users are shown.</p>
 				</div>
-
 				<div className="row" id="top-users">	
 					{showLeaderBoard(this.state.category)}
 				</div>
-				
-				<div className="row" id="current-ranking">			
-					{ showCurrentUserRanking() }
-				</div>
-
-
+				{ showCurrentUserRanking() }
 			</div>
 		)
 	}

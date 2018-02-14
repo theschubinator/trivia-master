@@ -80,8 +80,11 @@ h1 {
 }
 
 #current-ranking {
-	margin-top: 20px;
+	background-color: white;
+	margin-top: 50px;
+	padding-top: 15px;
 	margin-bottom: -25px;
+	font-size: 1.2em;
 }
 
 /* User Profile */
@@ -101,14 +104,9 @@ h1 {
 
 #user-games {
 	border: 1px solid black;
-	padding: 0;
 }
 
 /* UserGames */
-#test {
-	overflow: auto;
-	height: 586px;
-}
 
 #user-stats {
 	border: 1px solid black;
@@ -123,12 +121,13 @@ h1 {
 	text-align: center;
 }
 
-#user-games-table {
+#test {
+	height: 700px;
 	overflow: scroll;
 }
 
 ::-webkit-scrollbar {
-   background-color: #008B8B;
+   display: none;
 }
  
 #old-games button {
@@ -137,6 +136,5 @@ h1 {
 
 #user-stats-table th {
 	text-align: center;
-	font-size: 1.2em;
 }
 
