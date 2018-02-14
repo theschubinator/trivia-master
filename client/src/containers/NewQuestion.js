@@ -42,44 +42,48 @@ class NewQuestion extends Component {
 
 		if(!this.props.user.loggedIn) return <Redirect to="/" />
 		return (
-			<div id="questionForm">
-				<form onSubmit={this.handleSubmit}>
-					<div id="createQuestion">
-						<label>Question</label><br/>
-						<input type="text" className="inputField" name="question" value={this.state.question} onChange={this.handleChange} />
-					</div>
-					<div id="createByCategory">
-						<label>Choose a Category</label><br />
-							<select name="category_name" value={this.state.category_name} onChange={this.handleChange}>
-							  <option value="" selected disabled hidden>Categories...</option>
-								<option value="Sports">Sports</option>
-								<option value="History">History</option>
-								<option value="Science">Science</option>
-								<option value="Entertainment">Entertainment</option>
-							</select>
-					</div>
-					<div id="createAnswer">
-						<label>Answer</label><br/>
-						<input type="text" className="inputField" name="answer" value={this.state.answer} onChange={this.handleChange} />
-					</div>
-					<div className="createIncorrectChoice">
-						<label>Incorrect Choice #1</label><br/>
-						<input type="text" className="inputField" name="incorrect1" value={this.state.incorrect1} onChange={this.handleChange} />
-					</div>
-					<div className="createIncorrectChoice">
-						<label>Incorrect Choice #2</label><br/>
-						<input type="text" className="inputField" name="incorrect2" value={this.state.incorrect2} onChange={this.handleChange} />
-					</div>
-					<div className="createIncorrectChoice">
-						<label>Incorrect Choice #3</label><br/>
-						<input type="text" className="inputField" name="incorrect3" value={this.state.incorrect3} onChange={this.handleChange} />
-					</div>
+			<div className="row" id="questionForm">
+				<div className="col-md-6 col-sm-12">
+					<form onSubmit={this.handleSubmit}>
+						<div id="createQuestion">
+							<label>Question</label><br/>
+							<input type="text" className="input-field" name="question" value={this.state.question} onChange={this.handleChange} />
+						</div>
+						<div id="createByCategory">
+							<label>Choose a Category</label><br />
+								<select name="category_name" value={this.state.category_name} onChange={this.handleChange}>
+								  <option value="" selected disabled hidden>Categories...</option>
+									<option value="Sports">Sports</option>
+									<option value="History">History</option>
+									<option value="Science">Science</option>
+									<option value="Entertainment">Entertainment</option>
+								</select>
+						</div>
+						<div id="createAnswer">
+							<label>Answer</label><br/>
+							<input type="text" className="input-field" name="answer" value={this.state.answer} onChange={this.handleChange} />
+						</div>
+						<div className="createIncorrectChoice">
+							<label>Incorrect Choice #1</label><br/>
+							<input type="text" className="input-field" name="incorrect1" value={this.state.incorrect1} onChange={this.handleChange} />
+						</div>
+						<div className="createIncorrectChoice">
+							<label>Incorrect Choice #2</label><br/>
+							<input type="text" className="input-field" name="incorrect2" value={this.state.incorrect2} onChange={this.handleChange} />
+						</div>
+						<div className="createIncorrectChoice">
+							<label>Incorrect Choice #3</label><br/>
+							<input type="text" className="input-field" name="incorrect3" value={this.state.incorrect3} onChange={this.handleChange} />
+						</div>
 
-					<Button bsStyle="success" bsSize="large" type="submit" block>Create Question</Button>
+						<Button bsStyle="warning" bsSize="large" type="submit" block>Create Question</Button>
+					</form>
+
 					<div className="errors">
 						{showErrors()}
 					</div>
-				</form>
+					
+				</div>
 			</div>
 		)
 	}
