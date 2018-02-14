@@ -46,26 +46,36 @@ const UserGames = ({userGames, user, history, loadQuestion, setGame}) => {
 				</div>
 			</div>
 
-			<div className="row">
-				<div className="col-md-12 col-sm-12">
-					<Table id="user-stats-table">
-						<thead>
-						 <tr>
-						 	<th>Total</th>
-						 	<th>Sports</th>
-						 	<th>History</th>
-						 	<th>Entertainment</th>
-						 	<th>Science</th>
-						 </tr>
-						</thead>
-						<tbody>
-							<th>{Math.round(user.total_correct/(user.games_played * 10) * 100) || 0}%</th>
-							<th>{Math.round((user.sports_correct/user.sports_played) * 100) || 0}%</th>
-							<th>{Math.round((user.history_correct/user.history_played) * 100) || 0}%</th>
-							<th>{Math.round((user.entertainment_correct/user.entertainment_played) * 100) || 0}%</th>
-							<th>{Math.round((user.science_correct/user.science_played) * 100) || 0}%</th>
-						</tbody>
-					</Table>
+
+			<Table id="user-stats-table">
+				<thead>
+				 <tr>
+				 	<th>Total</th>
+				 	<th>Sports</th>
+				 	<th>History</th>
+				 	<th>Entertainment</th>
+				 	<th>Science</th>
+				 </tr>
+				</thead>
+				<tbody>
+					<th>{Math.round(user.total_correct/(user.games_played * 10) * 100) || 0}%</th>
+					<th>{Math.round((user.sports_correct/user.sports_played) * 100) || 0}%</th>
+					<th>{Math.round((user.history_correct/user.history_played) * 100) || 0}%</th>
+					<th>{Math.round((user.entertainment_correct/user.entertainment_played) * 100) || 0}%</th>
+					<th>{Math.round((user.science_correct/user.science_played) * 100) || 0}%</th>
+				</tbody>
+			</Table>
+
+			
+			<div id="old-games-table">
+				<div className="row">
+					<div className="col-sm-9">
+						<h1>Games Played:</h1>
+					</div>
+					<div className="col-sm-3">
+						<h1>{ user.games.length }</h1>
+					</div>
+
 				</div>
 			</div>
 
